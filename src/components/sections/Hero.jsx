@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
 
-const { FiArrowRight, FiTrendingUp, FiUsers, FiShield, FiBarChart3, FiHeadphones, FiClock } = FiIcons;
+const { FiArrowRight, FiTrendingUp, FiUsers, FiShield, FiBarChart3, FiHeadphones, FiTarget } = FiIcons;
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-emerald-50 via-white to-blue-50 overflow-hidden">
+    <section id="home" className="relative min-h-screen bg-gradient-to-br from-emerald-50 via-white to-blue-50 overflow-hidden pt-16">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-32 h-32 bg-emerald-500 rounded-full blur-3xl"></div>
@@ -25,7 +25,7 @@ const Hero = () => {
             className="mb-8"
           >
             <h1 className="text-2xl font-bold text-emerald-600 mb-2">FoodAgri AI</h1>
-            <p className="text-sm text-gray-600 uppercase tracking-wider">AI-Powered SaaS Platform</p>
+            <p className="text-sm text-gray-600 uppercase tracking-wider">AI-Powered Sales & Marketing Platform</p>
           </motion.div>
 
           {/* Main Headline */}
@@ -35,7 +35,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
           >
-            Manual processes and disconnected planning are{' '}
+            Manual lead generation and disconnected sales processes are{' '}
             <span className="text-red-600">killing your margins</span>—and your sanity.
           </motion.h1>
 
@@ -46,12 +46,12 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-700 mb-12 max-w-5xl mx-auto leading-relaxed"
           >
-            For food and agriculture businesses overwhelmed by inefficiency, compliance headaches, and slow growth, 
-            FoodAgri AI automates your workflows, fills your pipeline, and keeps you audit-ready—without the tech 
-            headaches or generic tools that never fit your needs.
+            For food and agriculture businesses overwhelmed by inefficient sales processes, compliance headaches, 
+            and slow growth, FoodAgri AI automates your lead generation, fills your pipeline, and keeps you 
+            audit-ready—without the tech headaches or generic tools that never fit your needs.
           </motion.p>
 
-          {/* Bullet Points - Now 6 items */}
+          {/* Bullet Points - 6 items focused on core services */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -61,27 +61,27 @@ const Hero = () => {
             {[
               {
                 icon: FiTrendingUp,
-                text: "10x your lead generation with AI-powered prospecting and outreach—no more wasted hours on manual research."
+                text: "10x your lead generation with AI-powered B2B prospecting and appointment setting—no more wasted hours on manual research."
               },
               {
                 icon: FiUsers,
-                text: "Instantly generate and personalize marketing content that actually resonates with buyers, using real industry trends."
+                text: "Scale your outreach with personalized cold email and LinkedIn campaigns that actually convert prospects to customers."
               },
               {
-                icon: FiShield,
-                text: "Automate compliance and traceability documentation so you're always audit-ready—no more last-minute scrambles."
+                icon: FiTarget,
+                text: "Leverage account-based marketing strategies to target high-value prospects in the food and agriculture industry."
               },
               {
                 icon: FiBarChart3,
-                text: "Visualize your entire operation and sales pipeline in real time, with dashboards that drive action."
+                text: "Get comprehensive market research and competitor analysis to position your offerings strategically."
               },
               {
                 icon: FiHeadphones,
-                text: "Delight customers with 24/7 AI-powered support and onboarding, reducing churn and boosting loyalty."
+                text: "Access dedicated SDR services and sales enablement tools to accelerate your revenue growth."
               },
               {
-                icon: FiClock,
-                text: "Optimize supply chain timing with AI-driven demand forecasting—reduce waste and maximize freshness."
+                icon: FiShield,
+                text: "Maintain compliance documentation and audit readiness while focusing on what matters most—growing your business."
               }
             ].map((item, index) => (
               <motion.div
@@ -114,7 +114,7 @@ const Hero = () => {
               <span>Reclaim Your Time & Boost Your Margins</span>
               <SafeIcon icon={FiArrowRight} className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <p className="text-sm text-gray-600">No credit card required • Free demo • Setup in minutes</p>
+            <p className="text-sm text-gray-600">No credit card required • Free consultation • Setup in minutes</p>
           </motion.div>
         </div>
       </div>

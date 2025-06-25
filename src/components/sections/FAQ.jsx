@@ -11,31 +11,31 @@ const FAQ = () => {
   const faqs = [
     {
       question: "How quickly can I see results with FoodAgri AI?",
-      answer: "Most clients see immediate improvements in workflow efficiency within the first week. Significant ROI typically becomes evident within 30-60 days, with full transformation benefits realized within 3-6 months. Our AI learns your business patterns quickly and starts optimizing processes from day one."
+      answer: "Most clients see immediate improvements in lead quality within the first week. Significant appointment bookings typically start within 30 days, with full ROI realized within 3-6 months. Our AI learns your ideal customer profile quickly and starts delivering qualified prospects from day one."
     },
     {
       question: "Do I need technical expertise to use FoodAgri AI?",
-      answer: "Not at all! FoodAgri AI is designed for food industry professionals, not IT experts. Our plug-and-play setup gets you started in minutes, and our intuitive interface requires no coding or technical skills. We also provide comprehensive onboarding and support to ensure your success."
+      answer: "Not at all! FoodAgri AI is designed for food industry professionals, not IT experts. Our plug-and-play setup gets you started in minutes, and our intuitive dashboard requires no technical skills. We also provide comprehensive onboarding and dedicated support to ensure your success."
     },
     {
-      question: "How does FoodAgri AI handle food safety and compliance requirements?",
-      answer: "Compliance is built into our core, not added as an afterthought. We support HACCP, FDA, USDA, SQF, BRC, and international food safety standards. Our system automatically generates compliance documentation, maintains audit trails, and keeps you updated on regulatory changes specific to your operations."
+      question: "How does FoodAgri AI handle food industry compliance?",
+      answer: "Compliance is built into our core approach, not added as an afterthought. We understand FDA, USDA, and industry-specific communication requirements. Our outreach templates and messaging are designed to be compliant while remaining effective for lead generation and sales."
     },
     {
-      question: "Can FoodAgri AI integrate with my existing systems?",
-      answer: "Yes! We integrate seamlessly with popular ERP systems (SAP, Oracle, Microsoft Dynamics), CRM platforms (Salesforce, HubSpot), accounting software (QuickBooks, Xero), and industry-specific tools. Our API-first approach ensures smooth data flow between all your systems."
+      question: "Can FoodAgri AI integrate with my existing CRM and sales tools?",
+      answer: "Yes! We integrate seamlessly with popular CRM platforms (Salesforce, HubSpot, Pipedrive), email systems (Outlook, Gmail), and marketing automation tools. Our API-first approach ensures smooth data flow between all your existing systems without disruption."
     },
     {
-      question: "What makes FoodAgri AI different from generic automation tools?",
-      answer: "Unlike generic platforms, we're built specifically for food and agriculture. Our AI is trained on industry-specific data, understands seasonal variations, supply chain complexities, and regulatory requirements. We speak your language and solve your unique challenges, not generic business problems."
+      question: "What makes FoodAgri AI different from generic sales automation tools?",
+      answer: "Unlike generic platforms, we're built specifically for food and agriculture sales. Our AI is trained on industry-specific data, understands food industry buyer personas, seasonal patterns, and regulatory requirements. We speak your language and solve your unique sales challenges, not generic business problems."
     },
     {
       question: "Is my data secure with FoodAgri AI?",
-      answer: "Absolutely. We use enterprise-grade security with SOC 2 Type II compliance, end-to-end encryption, and regular security audits. Your data is stored in secure, redundant data centers with 99.9% uptime guarantee. We never share your data with third parties and maintain strict confidentiality."
+      answer: "Absolutely. We use enterprise-grade security with SOC 2 Type II compliance, end-to-end encryption, and regular security audits. Your prospect data and business information are stored in secure, redundant data centers with 99.9% uptime guarantee. We never share your data with third parties."
     },
     {
       question: "What's included in the pricing?",
-      answer: "Our pricing is transparent with no hidden fees. Each package includes the software, implementation support, training, and ongoing customer success management. Enterprise packages include dedicated account management and custom integrations. We offer flexible monthly or annual billing options."
+      answer: "Our pricing is transparent with no hidden fees. Each package includes the software, implementation support, training, and ongoing customer success management. Higher-tier packages include dedicated account management and custom integrations. We offer flexible monthly or annual billing options."
     },
     {
       question: "Do you offer training and support?",
@@ -43,11 +43,11 @@ const FAQ = () => {
     },
     {
       question: "Can I try FoodAgri AI before committing?",
-      answer: "Absolutely! We offer a free demo where you can see FoodAgri AI in action with your specific use cases. We also provide a 30-day money-back guarantee on all paid plans, so you can try our platform risk-free and see the results for yourself."
+      answer: "Absolutely! We offer a free consultation and demo where you can see FoodAgri AI in action with your specific use cases. We also provide a 30-day money-back guarantee on all paid plans, so you can try our platform risk-free and see the results for yourself."
     },
     {
       question: "How do you measure ROI and success?",
-      answer: "We track key metrics including lead generation improvement, time savings, compliance cost reduction, customer satisfaction scores, and overall operational efficiency. Our dashboard provides real-time ROI calculations, and our average client sees 300% ROI within 6 months through increased productivity and reduced manual work."
+      answer: "We track key metrics including lead generation volume, appointment booking rates, lead-to-customer conversion, sales cycle length, and overall revenue attribution. Our dashboard provides real-time ROI calculations, and our average client sees 300% ROI within 6 months through increased sales efficiency and higher conversion rates."
     }
   ];
 
@@ -56,7 +56,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section id="faq" className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -69,7 +69,7 @@ const FAQ = () => {
             Frequently Asked <span className="text-emerald-600">Questions</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Get answers to the most common questions about FoodAgri AI and how it can transform your business.
+            Get answers to the most common questions about FoodAgri AI and how it can transform your sales results.
           </p>
         </motion.div>
 

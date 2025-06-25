@@ -10,43 +10,43 @@ const WhyDifferent = () => {
     {
       icon: FiTarget,
       title: "Food & Agriculture Focused",
-      description: "Unlike generic automation tools, we're built specifically for your industry's unique challenges.",
-      details: "Deep understanding of food safety regulations, supply chain complexities, and seasonal variations."
+      description: "Unlike generic sales tools, we're built specifically for your industry's unique challenges.",
+      details: "Deep understanding of food industry sales cycles, buyer personas, and market dynamics."
     },
     {
       icon: FiZap,
       title: "Plug-and-Play Setup",
       description: "No technical expertise required. Get started in minutes, not months.",
-      details: "Pre-configured workflows, industry templates, and seamless integrations with existing systems."
+      details: "Pre-configured sales workflows, industry templates, and seamless CRM integrations."
     },
     {
       icon: FiShield,
-      title: "Compliance-First Approach",
-      description: "Built with food safety and regulatory compliance at the core, not as an afterthought.",
-      details: "HACCP, FDA, USDA, and international standards compliance built into every workflow."
+      title: "Compliance-Aware Approach",
+      description: "Built with food industry regulations in mind, ensuring your outreach stays compliant.",
+      details: "Understanding of FDA, USDA, and industry-specific communication requirements."
     },
     {
       icon: FiTrendingUp,
       title: "Proven ROI",
-      description: "Our clients see average 300% ROI within 6 months through increased efficiency and reduced costs.",
-      details: "Measurable improvements in lead conversion, operational efficiency, and compliance costs."
+      description: "Our clients see average 300% ROI within 6 months through increased lead conversion and sales efficiency.",
+      details: "Measurable improvements in appointment rates, lead quality, and sales cycle acceleration."
     },
     {
       icon: FiUsers,
       title: "Industry Expertise",
-      description: "Founded by food industry veterans who understand your pain points firsthand.",
-      details: "20+ years combined experience in food manufacturing, distribution, and technology."
+      description: "Founded by food industry veterans who understand your sales challenges firsthand.",
+      details: "20+ years combined experience in food industry sales, marketing, and business development."
     },
     {
       icon: FiCpu,
       title: "Advanced AI Technology",
-      description: "Cutting-edge AI models trained specifically on food and agriculture data and workflows.",
-      details: "Machine learning algorithms optimized for supply chain forecasting, quality control, and market analysis."
+      description: "Cutting-edge AI models trained specifically on food and agriculture sales data.",
+      details: "Machine learning algorithms optimized for food industry lead scoring, personalization, and conversion."
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-900 text-white">
+    <section id="why-different" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -59,7 +59,7 @@ const WhyDifferent = () => {
             Why <span className="text-emerald-400">FoodAgri AI</span> is Different
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            We're not just another automation platform. We're your industry-specific growth partner.
+            We're not just another sales automation platform. We're your industry-specific growth partner.
           </p>
         </motion.div>
 
@@ -92,7 +92,7 @@ const WhyDifferent = () => {
           className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20"
         >
           <h3 className="text-3xl font-bold text-center mb-8">
-            FoodAgri AI vs. Generic Automation Tools
+            FoodAgri AI vs. Generic Sales Tools
           </h3>
           
           <div className="overflow-x-auto">
@@ -106,12 +106,12 @@ const WhyDifferent = () => {
               </thead>
               <tbody>
                 {[
-                  ['Industry-Specific AI', '✓ Trained on F&A data', '✗ Generic algorithms'],
-                  ['Compliance Integration', '✓ Built-in HACCP/FDA', '✗ Manual compliance'],
+                  ['Industry-Specific AI', '✓ Trained on F&A sales data', '✗ Generic algorithms'],
+                  ['Food Industry Templates', '✓ Pre-built campaigns', '✗ Start from scratch'],
                   ['Setup Time', '✓ Minutes', '✗ Weeks/Months'],
-                  ['Food Safety Focus', '✓ Core feature', '✗ Add-on or missing'],
-                  ['Supply Chain Optimization', '✓ Specialized tools', '✗ Basic automation'],
-                  ['Industry Support', '✓ Expert guidance', '✗ Generic support']
+                  ['Compliance Awareness', '✓ Built-in guidelines', '✗ Manual compliance'],
+                  ['Lead Quality', '✓ Industry-qualified leads', '✗ Generic prospects'],
+                  ['Expert Support', '✓ Food industry veterans', '✗ Generic support']
                 ].map((row, index) => (
                   <tr key={index} className="border-b border-white/10">
                     <td className="py-4 px-6 text-gray-300">{row[0]}</td>

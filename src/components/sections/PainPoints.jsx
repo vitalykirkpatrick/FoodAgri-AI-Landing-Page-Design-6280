@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
 
-const { FiSearch, FiAlertTriangle, FiFileText } = FiIcons;
+const { FiSearch, FiTrendingDown, FiFileText } = FiIcons;
 
 const PainPoints = () => {
   const painPoints = [
@@ -14,10 +14,10 @@ const PainPoints = () => {
       description: "Manual prospecting eats up your team's valuable time that should be spent closing deals."
     },
     {
-      icon: FiAlertTriangle,
-      title: "Operational Chaos",
-      quote: "It's a circus act trying to balance production schedules, business constraints, and material scarcity against ever-changing demand and the looming threat of spoilage.",
-      description: "Disconnected systems leave you constantly firefighting instead of strategically planning."
+      icon: FiTrendingDown,
+      title: "Sales & Marketing Chaos",
+      quote: "Our sales and marketing teams aren't aligned. We're chasing unqualified leads while missing real opportunities.",
+      description: "Disconnected sales and marketing efforts create inefficiency and wasted resources in the food industry."
     },
     {
       icon: FiFileText,
