@@ -80,13 +80,13 @@ const AboutMe = () => {
             <div className="flex flex-col md:flex-row gap-6 items-start">
               <div className="flex flex-col items-center">
                 <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-xl flex-shrink-0 mb-4">
-                  <img 
-                    src="https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1750876219612-PMBA-Vitaliy-Photo.jpg" 
-                    alt="Vitaliy - Founder of FoodAgri AI" 
+                  <img
+                    src="https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1750876219612-PMBA-Vitaliy-Photo.jpg"
+                    alt="Vitaly - Founder of FoodAgri AI"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
+
                 {/* My Mission Tag + Quote */}
                 <div className="w-full max-w-sm">
                   {/* Mission Tag */}
@@ -95,19 +95,18 @@ const AboutMe = () => {
                       My Mission
                     </span>
                   </div>
-                  
+
                   {/* Mission Quote */}
                   <div className="p-4 bg-emerald-50 rounded-xl">
                     <blockquote className="text-gray-700 text-sm italic leading-relaxed mb-3">
-                      "To help food and agriculture businesses reclaim their time, boost their margins, and scale 
-                      with confidence—using AI-powered sales and marketing that actually understands your industry."
+                      "To help food and agriculture businesses reclaim their time, boost their margins, and scale with confidence—using AI-powered sales and marketing that actually understands your industry."
                     </blockquote>
                     <p className="text-emerald-700 font-semibold text-xs text-right">
                       — Vitaly Kirkpatrick, Founder of FoodAgri AI
                     </p>
                   </div>
                 </div>
-                
+
                 {/* Core Expertise Section - Moved under mission */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -133,37 +132,20 @@ const AboutMe = () => {
                   </div>
                 </motion.div>
               </div>
-              
+
               <div className="flex-1">
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                  Hi, I'm Vitaliy - Your Sales Growth Partner
+                  Hi, I'm Vitaly - Your Sales Growth Partner
                 </h3>
-                
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>
-                    With over 18 years of enterprise sales leadership, I've dedicated my career to helping food and 
-                    agriculture businesses unlock their potential through innovative technology solutions. My journey spans 
-                    from analytical instrumentation to cloud-based platforms, always with one focus: driving measurable 
-                    results for my clients.
+                    With over 18 years of enterprise sales leadership, I've dedicated my career to helping food and agriculture businesses unlock their potential through innovative technology solutions. My journey spans from analytical instrumentation to cloud-based platforms, always with one focus: driving measurable results for my clients.
                   </p>
-                  
                   <p>
-                    I understand the unique challenges facing the food and agriculture industry—from compliance and 
-                    traceability requirements to the pressure for sustainable operations and profitable growth. That's 
-                    why I founded FoodAgri AI: to bring cutting-edge artificial intelligence solutions specifically 
-                    tailored to address these pain points.
+                    <strong>The problem I kept seeing everywhere:</strong> Food and agriculture businesses were stuck using generic sales and marketing approaches that didn't understand their unique challenges—from complex buyer journeys to seasonal market fluctuations.
                   </p>
-                  
                   <p>
-                    <strong>The problem I kept seeing everywhere:</strong> Food and agriculture businesses were 
-                    stuck using generic sales and marketing approaches that didn't understand their unique challenges—from 
-                    complex buyer journeys to seasonal market fluctuations.
-                  </p>
-                  
-                  <p>
-                    My approach combines deep industry knowledge with proven sales methodologies and emerging AI technologies. 
-                    I don't just sell solutions—I partner with you to ensure your business transformation delivers the 
-                    ROI you need to thrive in today's competitive market.
+                    My approach combines deep industry knowledge with proven sales methodologies and emerging AI technologies. I don't just sell solutions—I partner with you to ensure your business transformation delivers the ROI you need to thrive in today's competitive market.
                   </p>
                 </div>
               </div>

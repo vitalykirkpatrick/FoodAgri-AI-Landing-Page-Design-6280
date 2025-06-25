@@ -90,7 +90,7 @@ const WorkingTogether = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Partner With Me, and I'll Show You How To:
+            Partner with FoodAgri AI, and I'll Show You How To:
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Transform your food business with proven strategies that deliver measurable results in 90 days or less.
@@ -171,7 +171,7 @@ const WorkingTogether = () => {
               "Here's the thing – scaling sales for a B2B business doesn't have to be hard."
             </blockquote>
             <p className="text-xl opacity-90 mb-6">
-              It's a process and it's what I do. Let's build your sales machine together.
+              It's a process and it's what we do. Let's build your sales machine together.
             </p>
             <button className="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Schedule Your Free Strategy Session

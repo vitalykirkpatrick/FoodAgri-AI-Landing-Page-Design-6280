@@ -64,7 +64,7 @@ const ProductIntro = () => {
               <div className="absolute -top-4 -left-4 w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm font-bold z-10">
                 {index + 1}
               </div>
-              
+
               {/* Card */}
               <div className="bg-gray-50 rounded-2xl p-8 h-full border-2 border-transparent hover:border-emerald-200 transition-all duration-300">
                 <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
@@ -98,11 +98,9 @@ const ProductIntro = () => {
               <span className="text-2xl font-bold text-white">F</span>
             </div>
             <blockquote className="text-xl md:text-2xl text-white mb-6 leading-relaxed italic">
-              "As a former food industry operator, I know the pain of juggling compliance, sales, and customer support 
-              with outdated tools. That's why we built FoodAgri AI—to give you an unfair advantage, using the best of AI, 
-              with zero complexity."
+              "I understand the unique challenges facing the food and agriculture industry—from compliance and traceability requirements to the pressure for sustainable operations and profitable growth. That's why I founded FoodAgri AI: to bring cutting-edge artificial intelligence solutions specifically tailored to address these pain points."
             </blockquote>
-            <p className="text-emerald-400 font-semibold">— Founder, FoodAgri AI</p>
+            <p className="text-emerald-400 font-semibold">— Vitaly Kirkpatrick, Founder of FoodAgri AI</p>
           </div>
         </motion.div>
 
@@ -120,9 +118,8 @@ const ProductIntro = () => {
           <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
             Join hundreds of food and agriculture businesses already transforming their operations with FoodAgri AI.
           </p>
-          
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-6">
-            <button 
+            <button
               onClick={() => setShowForm(true)}
               className="group bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
             >
@@ -130,7 +127,6 @@ const ProductIntro = () => {
               <SafeIcon icon={FiArrowRight} className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
-          
           <p className="text-sm text-gray-600">
             No credit card required • Free demo • Setup in minutes
           </p>
