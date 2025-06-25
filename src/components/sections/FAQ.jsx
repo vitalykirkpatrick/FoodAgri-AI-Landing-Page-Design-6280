@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
+import SchedulingModal from '../modals/SchedulingModal';
+import useModal from '../../hooks/useModal';
 
 const { FiPlus, FiMinus } = FiIcons;
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
+  const schedulingModal = useModal();
 
   const faqs = [
     {
@@ -91,13 +94,13 @@ const FAQ = () => {
                   {faq.question}
                 </h3>
                 <div className="flex-shrink-0">
-                  <SafeIcon 
-                    icon={openIndex === index ? FiMinus : FiPlus} 
-                    className="w-5 h-5 text-emerald-600 transition-transform duration-200" 
+                  <SafeIcon
+                    icon={openIndex === index ? FiMinus : FiPlus}
+                    className="w-5 h-5 text-emerald-600 transition-transform duration-200"
                   />
                 </div>
               </button>
-              
+
               <motion.div
                 initial={false}
                 animate={{
@@ -134,7 +137,10 @@ const FAQ = () => {
               Our team is here to help. Schedule a free consultation to get personalized answers to your specific needs.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <button
+                onClick={schedulingModal.openModal}
+                className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
                 Schedule Free Consultation
               </button>
               <button className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">
@@ -144,6 +150,8 @@ const FAQ = () => {
           </div>
         </motion.div>
       </div>
+
+      <SchedulingModal isOpen={schedulingModal.isOpen} onClose={schedulingModal.closeModal} />
     </section>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
+import Logo from './Logo';
 
 const { FiMail, FiPhone, FiMapPin, FiLinkedin, FiTwitter, FiFacebook } = FiIcons;
 
@@ -40,13 +41,12 @@ const Footer = () => {
             className="lg:col-span-1"
           >
             <div className="mb-6">
-              <h3 className="text-2xl font-bold text-emerald-400 mb-4">FoodAgri AI</h3>
+              <Logo size="normal" className="mb-4" />
               <p className="text-gray-400 leading-relaxed mb-6">
-                Empowering food and agriculture businesses with AI-powered sales automation, 
-                lead generation, and marketing solutions that drive real results.
+                Empowering food and agriculture businesses with AI-powered sales automation, lead generation, and marketing solutions that drive real results.
               </p>
             </div>
-            
+
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <SafeIcon icon={FiMail} className="w-5 h-5 text-emerald-400" />
@@ -74,8 +74,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a 
-                    href="#services" 
+                  <a
+                    href="#services"
                     className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm"
                   >
                     {service}
@@ -96,8 +96,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm"
                   >
                     {link}
@@ -118,7 +118,7 @@ const Footer = () => {
             <p className="text-gray-400 text-sm mb-4">
               Get the latest insights on food industry sales and marketing trends.
             </p>
-            
+
             <div className="mb-6">
               <div className="flex">
                 <input
@@ -133,20 +133,20 @@ const Footer = () => {
             </div>
 
             <div className="flex space-x-4">
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-emerald-600 transition-colors duration-200"
               >
                 <SafeIcon icon={FiLinkedin} className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-emerald-600 transition-colors duration-200"
               >
                 <SafeIcon icon={FiTwitter} className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-emerald-600 transition-colors duration-200"
               >
                 <SafeIcon icon={FiFacebook} className="w-5 h-5" />

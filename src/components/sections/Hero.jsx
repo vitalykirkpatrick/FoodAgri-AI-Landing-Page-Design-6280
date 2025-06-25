@@ -2,10 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
+import DemoFormModal from '../modals/DemoFormModal';
+import useModal from '../../hooks/useModal';
 
 const { FiArrowRight, FiTrendingUp, FiUsers, FiShield, FiBarChart3, FiHeadphones, FiTarget } = FiIcons;
 
 const Hero = () => {
+  const demoModal = useModal();
+
   return (
     <section id="home" className="relative min-h-screen bg-gradient-to-br from-emerald-50 via-white to-blue-50 overflow-hidden pt-16">
       {/* Background Pattern */}
@@ -46,12 +50,10 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-700 mb-12 max-w-5xl mx-auto leading-relaxed"
           >
-            For food and agriculture businesses overwhelmed by inefficient sales processes, compliance headaches, 
-            and slow growth, FoodAgri AI automates your lead generation, fills your pipeline, and keeps you 
-            audit-ready—without the tech headaches or generic tools that never fit your needs.
+            For food and agriculture businesses overwhelmed by inefficient sales processes, compliance headaches, and slow growth, FoodAgri AI automates your lead generation, fills your pipeline, and keeps you audit-ready—without the tech headaches or generic tools that never fit your needs.
           </motion.p>
 
-          {/* Bullet Points - 6 items focused on core services */}
+          {/* Bullet Points */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -59,30 +61,12 @@ const Hero = () => {
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-6xl mx-auto"
           >
             {[
-              {
-                icon: FiTrendingUp,
-                text: "10x your lead generation with AI-powered B2B prospecting and appointment setting—no more wasted hours on manual research."
-              },
-              {
-                icon: FiUsers,
-                text: "Scale your outreach with personalized cold email and LinkedIn campaigns that actually convert prospects to customers."
-              },
-              {
-                icon: FiTarget,
-                text: "Leverage account-based marketing strategies to target high-value prospects in the food and agriculture industry."
-              },
-              {
-                icon: FiBarChart3,
-                text: "Get comprehensive market research and competitor analysis to position your offerings strategically."
-              },
-              {
-                icon: FiHeadphones,
-                text: "Access dedicated SDR services and sales enablement tools to accelerate your revenue growth."
-              },
-              {
-                icon: FiShield,
-                text: "Maintain compliance documentation and audit readiness while focusing on what matters most—growing your business."
-              }
+              { icon: FiTrendingUp, text: "10x your lead generation with AI-powered B2B prospecting and appointment setting—no more wasted hours on manual research." },
+              { icon: FiUsers, text: "Scale your outreach with personalized cold email and LinkedIn campaigns that actually convert prospects to customers." },
+              { icon: FiTarget, text: "Leverage account-based marketing strategies to target high-value prospects in the food and agriculture industry." },
+              { icon: FiBarChart3, text: "Get comprehensive market research and competitor analysis to position your offerings strategically." },
+              { icon: FiHeadphones, text: "Access dedicated SDR services and sales enablement tools to accelerate your revenue growth." },
+              { icon: FiShield, text: "Maintain compliance documentation and audit readiness while focusing on what matters most—growing your business." }
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -110,7 +94,10 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
           >
-            <button className="group bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2">
+            <button
+              onClick={demoModal.openModal}
+              className="group bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
+            >
               <span>Reclaim Your Time & Boost Your Margins</span>
               <SafeIcon icon={FiArrowRight} className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -118,6 +105,8 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
+
+      <DemoFormModal isOpen={demoModal.isOpen} onClose={demoModal.closeModal} />
     </section>
   );
 };

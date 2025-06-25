@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
-import DemoForm from '../DemoForm';
+import DemoFormModal from '../modals/DemoFormModal';
+import useModal from '../../hooks/useModal';
 
 const { FiDatabase, FiZap, FiTrendingUp, FiArrowRight } = FiIcons;
 
 const ProductIntro = () => {
-  const [showForm, setShowForm] = useState(false);
+  const demoModal = useModal();
 
   const steps = [
     {
@@ -31,7 +32,7 @@ const ProductIntro = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Product Introduction */}
         <motion.div
@@ -66,7 +67,7 @@ const ProductIntro = () => {
               </div>
 
               {/* Card */}
-              <div className="bg-gray-50 rounded-2xl p-8 h-full border-2 border-transparent hover:border-emerald-200 transition-all duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 h-full border-2 border-transparent hover:border-emerald-200 transition-all duration-300 shadow-lg">
                 <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
                   <SafeIcon icon={step.icon} className="w-8 h-8 text-emerald-600" />
                 </div>
@@ -91,7 +92,7 @@ const ProductIntro = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-8 md:p-12 mb-16"
+          className="bg-gradient-to-r from-gray-900 to-indigo-900 rounded-3xl p-8 md:p-12 mb-16"
         >
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 bg-emerald-600 rounded-full mx-auto mb-6 flex items-center justify-center">
@@ -110,31 +111,30 @@ const ProductIntro = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-3xl p-8 md:p-12 text-center"
+          className="bg-gradient-to-r from-emerald-600 to-blue-600 rounded-3xl p-8 md:p-12 text-center text-white"
         >
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to reclaim your time, boost your margins, and finally scale with confidence?
           </h3>
-          <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
             Join hundreds of food and agriculture businesses already transforming their operations with FoodAgri AI.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-6">
             <button
-              onClick={() => setShowForm(true)}
-              className="group bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
+              onClick={demoModal.openModal}
+              className="group bg-white text-emerald-600 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
             >
               <span>Get Your Free Demo Now</span>
               <SafeIcon icon={FiArrowRight} className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm opacity-75">
             No credit card required • Free demo • Setup in minutes
           </p>
         </motion.div>
       </div>
 
-      {/* Demo Form Modal */}
-      {showForm && <DemoForm onClose={() => setShowForm(false)} />}
+      <DemoFormModal isOpen={demoModal.isOpen} onClose={demoModal.closeModal} />
     </section>
   );
 };

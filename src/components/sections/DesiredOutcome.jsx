@@ -40,7 +40,7 @@ const DesiredOutcome = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-emerald-50 via-blue-50 to-green-50">
+    <section className="py-20 bg-gradient-to-br from-emerald-900 via-teal-900 to-blue-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -49,11 +49,11 @@ const DesiredOutcome = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Imagine your business running on{' '}
-            <span className="text-emerald-600">autopilot</span>—finally.
+            <span className="text-emerald-400">autopilot</span>—finally.
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Picture this: You wake up to a business that runs itself while you sleep.
           </p>
         </motion.div>
@@ -66,18 +66,18 @@ const DesiredOutcome = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
             >
-              <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
-                <SafeIcon icon={outcome.icon} className="w-8 h-8 text-emerald-600" />
+              <div className="w-16 h-16 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6">
+                <SafeIcon icon={outcome.icon} className="w-8 h-8 text-emerald-400" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{outcome.title}</h3>
-              <p className="text-gray-700 mb-6 leading-relaxed">{outcome.description}</p>
+              <h3 className="text-2xl font-bold text-white mb-4">{outcome.title}</h3>
+              <p className="text-gray-300 mb-6 leading-relaxed">{outcome.description}</p>
               <ul className="space-y-2">
                 {outcome.benefits.map((benefit, idx) => (
                   <li key={idx} className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-gray-600">{benefit}</span>
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-gray-400">{benefit}</span>
                   </li>
                 ))}
               </ul>
@@ -96,8 +96,7 @@ const DesiredOutcome = () => {
             Welcome to the new paradigm:
           </h3>
           <p className="text-xl leading-relaxed max-w-4xl mx-auto opacity-90">
-            <strong>FoodAgri AI:</strong> The first platform designed for food and agriculture businesses to automate, 
-            unify, and personalize every workflow—from lead gen to compliance—using the power of vertical AI.
+            <strong>FoodAgri AI:</strong> The first platform designed for food and agriculture businesses to automate, unify, and personalize every workflow—from lead gen to compliance—using the power of vertical AI.
           </p>
         </motion.div>
       </div>

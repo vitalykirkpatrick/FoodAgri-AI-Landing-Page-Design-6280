@@ -7,26 +7,10 @@ const { FiAward, FiTrendingUp, FiUsers, FiTarget } = FiIcons;
 
 const AboutMe = () => {
   const achievements = [
-    {
-      icon: FiAward,
-      number: "18+",
-      label: "Years in Enterprise Sales"
-    },
-    {
-      icon: FiTrendingUp,
-      number: "$50M+",
-      label: "Revenue Growth Generated"
-    },
-    {
-      icon: FiUsers,
-      number: "500+",
-      label: "Businesses Transformed"
-    },
-    {
-      icon: FiTarget,
-      number: "95%",
-      label: "Client Success Rate"
-    }
+    { icon: FiAward, number: "18+", label: "Years in Enterprise Sales" },
+    { icon: FiTrendingUp, number: "$50M+", label: "Revenue Growth Generated" },
+    { icon: FiUsers, number: "500+", label: "Businesses Transformed" },
+    { icon: FiTarget, number: "95%", label: "Client Success Rate" }
   ];
 
   const skills = [
@@ -51,7 +35,7 @@ const AboutMe = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-emerald-50 to-blue-50">
+    <section id="about" className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-emerald-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -77,63 +61,18 @@ const AboutMe = () => {
             viewport={{ once: true }}
             className="lg:col-span-2 bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg"
           >
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="flex flex-col items-center">
-                <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-xl flex-shrink-0 mb-4">
-                  <img
-                    src="https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1750876219612-PMBA-Vitaliy-Photo.jpg"
-                    alt="Vitaly - Founder of FoodAgri AI"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* My Mission Tag + Quote */}
-                <div className="w-full max-w-sm">
-                  {/* Mission Tag */}
-                  <div className="mb-2 text-center">
-                    <span className="inline-block bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                      My Mission
-                    </span>
-                  </div>
-
-                  {/* Mission Quote */}
-                  <div className="p-4 bg-emerald-50 rounded-xl">
-                    <blockquote className="text-gray-700 text-sm italic leading-relaxed mb-3">
-                      "To help food and agriculture businesses reclaim their time, boost their margins, and scale with confidence—using AI-powered sales and marketing that actually understands your industry."
-                    </blockquote>
-                    <p className="text-emerald-700 font-semibold text-xs text-right">
-                      — Vitaly Kirkpatrick, Founder of FoodAgri AI
-                    </p>
-                  </div>
-                </div>
-
-                {/* Core Expertise Section - Moved under mission */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                  viewport={{ once: true }}
-                  className="w-full max-w-sm mt-6 bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-lg"
-                >
-                  <h4 className="text-sm font-bold text-gray-900 mb-3 text-center">Core Expertise</h4>
-                  <div className="flex flex-wrap gap-1.5">
-                    {skills.map((skill, index) => (
-                      <motion.span
-                        key={index}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3, delay: index * 0.03 }}
-                        viewport={{ once: true }}
-                        className="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full text-xs font-medium hover:bg-emerald-200 transition-colors duration-200"
-                      >
-                        {skill}
-                      </motion.span>
-                    ))}
-                  </div>
-                </motion.div>
+            <div className="space-y-6">
+              {/* Wide Hero Image */}
+              <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-xl mb-6">
+                <img
+                  src="https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1750891585987-Picture7.jpg"
+                  alt="Vitaly working with food manufacturers - industry expertise in action"
+                  className="w-full h-full object-cover"
+                />
               </div>
 
-              <div className="flex-1">
+              {/* Content Section */}
+              <div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">
                   Hi, I'm Vitaly - Your Sales Growth Partner
                 </h3>
@@ -148,6 +87,21 @@ const AboutMe = () => {
                     My approach combines deep industry knowledge with proven sales methodologies and emerging AI technologies. I don't just sell solutions—I partner with you to ensure your business transformation delivers the ROI you need to thrive in today's competitive market.
                   </p>
                 </div>
+              </div>
+
+              {/* My Mission Section */}
+              <div className="bg-emerald-50 rounded-xl p-6">
+                <div className="mb-2 text-center">
+                  <span className="inline-block bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                    My Mission
+                  </span>
+                </div>
+                <blockquote className="text-gray-700 text-sm italic leading-relaxed mb-3 text-center">
+                  "To help food and agriculture businesses reclaim their time, boost their margins, and scale with confidence—using AI-powered sales and marketing that actually understands your industry."
+                </blockquote>
+                <p className="text-emerald-700 font-semibold text-xs text-center">
+                  — Vitaly Kirkpatrick, Founder of FoodAgri AI
+                </p>
               </div>
             </div>
           </motion.div>
@@ -204,6 +158,31 @@ const AboutMe = () => {
                   <div className="text-xs text-gray-600">{achievement.label}</div>
                 </motion.div>
               ))}
+            </motion.div>
+
+            {/* Core Expertise Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-lg"
+            >
+              <h4 className="text-sm font-bold text-gray-900 mb-3 text-center">Core Expertise</h4>
+              <div className="flex flex-wrap gap-1.5">
+                {skills.map((skill, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: index * 0.03 }}
+                    viewport={{ once: true }}
+                    className="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full text-xs font-medium hover:bg-emerald-200 transition-colors duration-200"
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>

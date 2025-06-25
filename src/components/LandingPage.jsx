@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navigation from './Navigation';
 import HeroMain from './sections/HeroMain';
+import LogoStrip from './sections/LogoStrip';
 import Hero from './sections/Hero';
 import PainPoints from './sections/PainPoints';
 import DesiredOutcome from './sections/DesiredOutcome';
@@ -18,6 +19,7 @@ const LandingPage = () => {
     <div className="min-h-screen bg-white">
       <Navigation />
       <HeroMain />
+      <LogoStrip />
       <Hero />
       <PainPoints />
       <DesiredOutcome />

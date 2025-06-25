@@ -1,11 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
+import SchedulingModal from '../modals/SchedulingModal';
+import useModal from '../../hooks/useModal';
 
 const { FiTarget, FiEdit3, FiShield, FiHeadphones, FiTrendingUp, FiUsers, FiSearch, FiLinkedin } = FiIcons;
 
 const OurServices = () => {
+  const navigate = useNavigate();
+  const schedulingModal = useModal();
+
   const services = [
     {
       icon: FiTarget,
@@ -17,7 +23,7 @@ const OurServices = () => {
         "Calendar integration and scheduling",
         "Detailed prospect research and preparation"
       ],
-      price: "Starting at $299/month"
+      slug: "appointment-setting"
     },
     {
       icon: FiTrendingUp,
@@ -29,7 +35,7 @@ const OurServices = () => {
         "Lead qualification and scoring",
         "CRM integration and management"
       ],
-      price: "Starting at $399/month"
+      slug: "lead-generation"
     },
     {
       icon: FiSearch,
@@ -41,7 +47,7 @@ const OurServices = () => {
         "Market opportunity identification",
         "Custom research reports and insights"
       ],
-      price: "Starting at $249/month"
+      slug: "market-research"
     },
     {
       icon: FiUsers,
@@ -53,7 +59,7 @@ const OurServices = () => {
         "Multi-touchpoint engagement strategies",
         "Account penetration and expansion"
       ],
-      price: "Starting at $499/month"
+      slug: "account-based-marketing"
     },
     {
       icon: FiEdit3,
@@ -65,7 +71,7 @@ const OurServices = () => {
         "Deliverability management",
         "Response tracking and analytics"
       ],
-      price: "Starting at $199/month"
+      slug: "cold-email-outreach"
     },
     {
       icon: FiLinkedin,
@@ -77,7 +83,7 @@ const OurServices = () => {
         "Follow-up message sequences",
         "Relationship building and nurturing"
       ],
-      price: "Starting at $299/month"
+      slug: "linkedin-outreach"
     },
     {
       icon: FiHeadphones,
@@ -89,7 +95,7 @@ const OurServices = () => {
         "Lead qualification and handoff",
         "Performance reporting and optimization"
       ],
-      price: "Starting at $2,499/month"
+      slug: "outsourced-sdr-services"
     },
     {
       icon: FiShield,
@@ -101,10 +107,14 @@ const OurServices = () => {
         "Sales collateral development",
         "Performance tracking and analytics"
       ],
-      price: "Starting at $399/month",
-      isPopular: true
+      isPopular: true,
+      slug: "sales-enablement"
     }
   ];
+
+  const handleServiceClick = (slug) => {
+    navigate(`/services/${slug}`);
+  };
 
   return (
     <section id="services" className="py-20 bg-gradient-to-b from-white to-gray-50">
@@ -132,9 +142,10 @@ const OurServices = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative bg-white rounded-2xl p-6 shadow-lg border-2 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
+              className={`relative bg-white rounded-2xl p-6 shadow-lg border-2 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer ${
                 service.isPopular ? 'border-emerald-400' : 'border-gray-100'
               }`}
+              onClick={() => handleServiceClick(service.slug)}
             >
               {service.isPopular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -161,13 +172,18 @@ const OurServices = () => {
               </ul>
 
               <div className="mt-auto">
-                <div className="text-lg font-bold text-emerald-600 mb-3">{service.price}</div>
-                <button className={`w-full py-2 px-4 rounded-xl font-semibold text-sm transition-all duration-300 ${
-                  service.isPopular 
-                    ? 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg hover:shadow-xl' 
-                    : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
-                }`}>
-                  Get Started
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleServiceClick(service.slug);
+                  }}
+                  className={`w-full py-2 px-4 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                    service.isPopular
+                      ? 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg hover:shadow-xl'
+                      : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
+                  }`}
+                >
+                  View Packages
                 </button>
               </div>
             </motion.div>
@@ -188,12 +204,17 @@ const OurServices = () => {
             <p className="text-xl text-gray-700 mb-6 max-w-2xl mx-auto">
               Schedule a free consultation and we'll create a tailored package that fits your specific business needs and budget.
             </p>
-            <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <button
+              onClick={schedulingModal.openModal}
+              className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
               Schedule Free Consultation
             </button>
           </div>
         </motion.div>
       </div>
+
+      <SchedulingModal isOpen={schedulingModal.isOpen} onClose={schedulingModal.closeModal} />
     </section>
   );
 };

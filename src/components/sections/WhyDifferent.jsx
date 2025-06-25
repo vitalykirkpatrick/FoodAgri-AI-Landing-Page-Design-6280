@@ -46,7 +46,7 @@ const WhyDifferent = () => {
   ];
 
   return (
-    <section id="why-different" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-900 text-white">
+    <section id="why-different" className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -55,10 +55,10 @@ const WhyDifferent = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Why <span className="text-emerald-400">FoodAgri AI</span> is Different
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Why <span className="text-blue-600">FoodAgri AI</span> is Different
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             We're not just another sales automation platform. We're your industry-specific growth partner.
           </p>
         </motion.div>
@@ -71,14 +71,14 @@ const WhyDifferent = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-blue-100 hover:bg-white/90 hover:shadow-xl transition-all duration-300"
             >
-              <div className="w-16 h-16 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6">
-                <SafeIcon icon={item.icon} className="w-8 h-8 text-emerald-400" />
+              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                <SafeIcon icon={item.icon} className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-              <p className="text-gray-300 mb-4 leading-relaxed">{item.description}</p>
-              <p className="text-sm text-gray-400">{item.details}</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
+              <p className="text-gray-700 mb-4 leading-relaxed">{item.description}</p>
+              <p className="text-sm text-gray-600">{item.details}</p>
             </motion.div>
           ))}
         </div>
@@ -89,19 +89,18 @@ const WhyDifferent = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20"
+          className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-blue-200 shadow-xl"
         >
-          <h3 className="text-3xl font-bold text-center mb-8">
+          <h3 className="text-3xl font-bold text-center mb-8 text-gray-900">
             FoodAgri AI vs. Generic Sales Tools
           </h3>
-          
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-white/20">
-                  <th className="text-left py-4 px-6 text-gray-300">Feature</th>
-                  <th className="text-center py-4 px-6 text-emerald-400 font-bold">FoodAgri AI</th>
-                  <th className="text-center py-4 px-6 text-gray-400">Generic Tools</th>
+                <tr className="border-b border-gray-300">
+                  <th className="text-left py-4 px-6 text-gray-700">Feature</th>
+                  <th className="text-center py-4 px-6 text-blue-600 font-bold">FoodAgri AI</th>
+                  <th className="text-center py-4 px-6 text-gray-500">Generic Tools</th>
                 </tr>
               </thead>
               <tbody>
@@ -113,10 +112,10 @@ const WhyDifferent = () => {
                   ['Lead Quality', '✓ Industry-qualified leads', '✗ Generic prospects'],
                   ['Expert Support', '✓ Food industry veterans', '✗ Generic support']
                 ].map((row, index) => (
-                  <tr key={index} className="border-b border-white/10">
-                    <td className="py-4 px-6 text-gray-300">{row[0]}</td>
-                    <td className="py-4 px-6 text-center text-emerald-400">{row[1]}</td>
-                    <td className="py-4 px-6 text-center text-gray-400">{row[2]}</td>
+                  <tr key={index} className="border-b border-gray-200">
+                    <td className="py-4 px-6 text-gray-700">{row[0]}</td>
+                    <td className="py-4 px-6 text-center text-blue-600">{row[1]}</td>
+                    <td className="py-4 px-6 text-center text-gray-500">{row[2]}</td>
                   </tr>
                 ))}
               </tbody>

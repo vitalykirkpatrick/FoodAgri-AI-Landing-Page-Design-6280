@@ -28,7 +28,7 @@ const PainPoints = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-20 bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -54,7 +54,7 @@ const PainPoints = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+              className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-red-100 hover:shadow-xl transition-all duration-300"
             >
               <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-6">
                 <SafeIcon icon={pain.icon} className="w-8 h-8 text-red-600" />
@@ -73,14 +73,13 @@ const PainPoints = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gray-900 rounded-3xl p-8 md:p-12 text-center"
+          className="bg-gradient-to-r from-gray-900 to-red-900 rounded-3xl p-8 md:p-12 text-center"
         >
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Here's the truth:
           </h3>
-          <p className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
-            You don't need another generic software or a bigger team. The real problem? Your tools aren't built 
-            for the unique chaos of food and agriculture—so you're always fighting fires instead of fixing the root cause.
+          <p className="text-xl text-gray-200 leading-relaxed max-w-4xl mx-auto">
+            You don't need another generic software or a bigger team. The real problem? Your tools aren't built for the unique chaos of food and agriculture—so you're always fighting fires instead of fixing the root cause.
           </p>
         </motion.div>
       </div>

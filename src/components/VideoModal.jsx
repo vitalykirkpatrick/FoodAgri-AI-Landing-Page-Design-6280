@@ -5,7 +5,9 @@ import SafeIcon from '../common/SafeIcon';
 
 const { FiX, FiPlay } = FiIcons;
 
-const VideoModal = ({ onClose }) => {
+const VideoModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
       <motion.div
@@ -20,7 +22,7 @@ const VideoModal = ({ onClose }) => {
         >
           <SafeIcon icon={FiX} className="w-8 h-8" />
         </button>
-        
+
         <div className="bg-black rounded-2xl overflow-hidden shadow-2xl">
           <div className="aspect-video bg-gray-900 flex items-center justify-center">
             {/* Placeholder for video - replace with actual video embed */}
