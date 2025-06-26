@@ -8,30 +8,52 @@ const { FiAward, FiTrendingUp, FiUsers, FiTarget } = FiIcons;
 const AboutMe = () => {
   const achievements = [
     { icon: FiAward, number: "18+", label: "Years in Enterprise Sales" },
-    { icon: FiTrendingUp, number: "$5M+", label: "Revenue Generated" },
+    { icon: FiTrendingUp, number: "$20M+", label: "Revenue Generated" },
     { icon: FiUsers, number: "Fortune 500", label: "Clients Served" },
     { icon: FiTarget, number: "170%", label: "Peak Sales Growth" }
   ];
 
   const skills = [
     'Enterprise Sales Leadership',
-    'Food Industry Sales',
+    'Food Industry Sales & Marketing',
     'SaaS & Cloud Solutions',
     'Account Management',
-    'Lead Generation',
-    'Sales Automation',
+    'B2B Lead Generation',
+    'Sales Automation & AI',
     'CRM Systems (Salesforce, SAP)',
     'Strategic Territory Management',
-    'Analytical Instrumentation',
+    'Analytical & Laboratory Instrumentation',
     'Quality Management Systems',
-    'Food Safety Compliance',
+    'Food Safety & Compliance',
     'Agricultural Technology',
     'Business Development',
     'Revenue Operations',
-    'Customer Success',
-    'IoT Solutions',
-    'Data Analytics',
-    'Pipeline Management'
+    'Customer Success Management',
+    'IoT Solutions & Integration',
+    'Data Analytics & Insights',
+    'Pipeline Management',
+    'Cold Email Marketing',
+    'LinkedIn Sales Strategy',
+    'Appointment Setting',
+    'Market Research & Intelligence',
+    'Sales Process Optimization',
+    'Team Leadership & Training',
+    'Strategic Partnerships',
+    'Regulatory Compliance (FDA/USDA)',
+    'Supply Chain Technology',
+    'Food Manufacturing Processes',
+    'NIR Spectroscopy & Analytics',
+    'Quality Assurance Systems',
+    'Sales Enablement Tools',
+    'Marketing Automation',
+    'Customer Relationship Building',
+    'Consultative Selling',
+    'Solution Architecture',
+    'Project Management',
+    'Cross-functional Collaboration',
+    'Performance Metrics & KPIs',
+    'Digital Transformation',
+    'AI Implementation Strategy'
   ];
 
   return (
@@ -130,8 +152,8 @@ const AboutMe = () => {
                   'Worked with Fortune 500 clients: Cargill, Nestlé, ADM, Tyson Foods',
                   'Salesforce Certified Administrator (SCA)',
                   'Founded and scaled SaaS/IoT startup with 135+ clients',
-                  'Generated $5M+ in revenue through strategic sales initiatives',
-                  'Expert in analytical instrumentation and quality management systems',
+                  'Generated $20M+ in revenue through strategic sales initiatives',
+                  'Expert in analytical and laboratory instrumentation and quality management systems',
                   'Deep understanding of food safety regulations and compliance'
                 ].map((credential, index) => (
                   <li key={index} className="flex items-start space-x-2">
