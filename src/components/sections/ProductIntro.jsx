@@ -43,7 +43,8 @@ const ProductIntro = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            <span className="text-emerald-600">FoodAgri AI:</span> The All-in-One AI Automation Platform for Food & Agriculture
+            <span className="text-emerald-600">FoodAgri</span>{' '}
+            <span className="text-blue-600">AI</span>: The All-in-One <span className="text-blue-600">AI</span> Automation Platform for Food & Agriculture
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Transform your business in three simple steps—no technical expertise required.
@@ -99,9 +100,13 @@ const ProductIntro = () => {
               <span className="text-2xl font-bold text-white">V</span>
             </div>
             <blockquote className="text-xl md:text-2xl text-white mb-6 leading-relaxed italic">
-              "I understand the unique challenges facing the food and agriculture industry—from compliance and traceability requirements to the pressure for sustainable operations and profitable growth. That's why I founded FoodAgri AI: to bring cutting-edge artificial intelligence solutions specifically tailored to address these pain points."
+              "I understand the unique challenges facing the food and agriculture industry—from compliance and traceability requirements to the pressure for sustainable operations and profitable growth. That's why I founded <span className="text-emerald-300">FoodAgri</span>{' '}
+              <span className="text-blue-300">AI</span>: to bring cutting-edge artificial intelligence solutions specifically tailored to address these pain points."
             </blockquote>
-            <p className="text-emerald-400 font-semibold">— Vitaly Kirkpatrick, Founder of FoodAgri AI</p>
+            <p className="text-emerald-400 font-semibold">
+              — Vitaly Kirkpatrick, Founder of <span className="text-emerald-300">FoodAgri</span>{' '}
+              <span className="text-blue-300">AI</span>
+            </p>
           </div>
         </motion.div>
 
@@ -117,7 +122,8 @@ const ProductIntro = () => {
             Ready to reclaim your time, boost your margins, and finally scale with confidence?
           </h3>
           <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-            Join hundreds of food and agriculture businesses already transforming their operations with FoodAgri AI.
+            Join hundreds of food and agriculture businesses already transforming their operations with <span className="text-emerald-300">FoodAgri</span>{' '}
+            <span className="text-blue-300">AI</span>.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-6">
             <button

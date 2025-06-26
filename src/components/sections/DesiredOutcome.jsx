@@ -96,7 +96,10 @@ const DesiredOutcome = () => {
             Welcome to the new paradigm:
           </h3>
           <p className="text-xl leading-relaxed max-w-4xl mx-auto opacity-90">
-            <strong>FoodAgri AI:</strong> The first platform designed for food and agriculture businesses to automate, unify, and personalize every workflow—from lead gen to compliance—using the power of vertical AI.
+            <strong>
+              <span className="text-emerald-300">FoodAgri</span>{' '}
+              <span className="text-blue-300">AI</span>:
+            </strong> The first platform designed for food and agriculture businesses to automate, unify, and personalize every workflow—from lead gen to compliance—using the power of vertical <span className="text-blue-300">AI</span>.
           </p>
         </motion.div>
       </div>

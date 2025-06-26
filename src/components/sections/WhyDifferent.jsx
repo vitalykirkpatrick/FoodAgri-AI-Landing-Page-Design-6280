@@ -56,7 +56,8 @@ const WhyDifferent = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Why <span className="text-blue-600">FoodAgri AI</span> is Different
+            Why <span className="text-emerald-600">FoodAgri</span>{' '}
+            <span className="text-blue-600">AI</span> is Different
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             We're not just another sales automation platform. We're your industry-specific growth partner.
@@ -92,14 +93,18 @@ const WhyDifferent = () => {
           className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-blue-200 shadow-xl"
         >
           <h3 className="text-3xl font-bold text-center mb-8 text-gray-900">
-            FoodAgri AI vs. Generic Sales Tools
+            <span className="text-emerald-600">FoodAgri</span>{' '}
+            <span className="text-blue-600">AI</span> vs. Generic Sales Tools
           </h3>
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
                 <tr className="border-b border-gray-300">
                   <th className="text-left py-4 px-6 text-gray-700">Feature</th>
-                  <th className="text-center py-4 px-6 text-blue-600 font-bold">FoodAgri AI</th>
+                  <th className="text-center py-4 px-6 text-blue-600 font-bold">
+                    <span className="text-emerald-600">FoodAgri</span>{' '}
+                    <span className="text-blue-600">AI</span>
+                  </th>
                   <th className="text-center py-4 px-6 text-gray-500">Generic Tools</th>
                 </tr>
               </thead>

@@ -109,7 +109,8 @@ const AboutMe = () => {
                     Throughout my career, I've worked with industry leaders like Cargill, Nestlé, ADM, Tyson Foods, PepsiCo, and Darigold, helping them implement technology solutions that drive real business outcomes. I know firsthand the challenges of food safety, quality management, and the unique sales cycles that define our industry—because I've lived them from both sides: as a chef and as a technologist.
                   </p>
                   <p>
-                    Today, I'm passionate about bridging the gap between tradition and innovation. With FoodAgri AI, I help food and agriculture businesses unlock their potential—automating what's tedious, personalizing what matters, and ensuring quality at every step. My mission is simple: to empower you with the technology, insights, and support you need to thrive in a rapidly evolving industry—without ever losing sight of the values that make great food possible.
+                    Today, I'm passionate about bridging the gap between tradition and innovation. With <span className="text-emerald-600">FoodAgri</span>{' '}
+                    <span className="text-blue-600">AI</span>, I help food and agriculture businesses unlock their potential—automating what's tedious, personalizing what matters, and ensuring quality at every step. My mission is simple: to empower you with the technology, insights, and support you need to thrive in a rapidly evolving industry—without ever losing sight of the values that make great food possible.
                   </p>
                   <p className="font-semibold text-emerald-700">
                     Let's build the future of food, together.
@@ -125,10 +126,11 @@ const AboutMe = () => {
                   </span>
                 </div>
                 <blockquote className="text-gray-700 text-sm italic leading-relaxed mb-3 text-center">
-                  "To help food and agriculture businesses reclaim their time, boost their margins, and scale with confidence—using AI-powered sales and marketing that actually understands your industry."
+                  "To help food and agriculture businesses reclaim their time, boost their margins, and scale with confidence—using <span className="text-blue-600">AI</span>-powered sales and marketing that actually understands your industry."
                 </blockquote>
                 <p className="text-emerald-700 font-semibold text-xs text-center">
-                  — Vitaly Kirkpatrick, Founder of FoodAgri AI
+                  — Vitaly Kirkpatrick, Founder of <span className="text-emerald-600">FoodAgri</span>{' '}
+                  <span className="text-blue-600">AI</span>
                 </p>
               </div>
             </div>
@@ -201,16 +203,12 @@ const AboutMe = () => {
               <h4 className="text-sm font-bold text-gray-900 mb-3 text-center">Core Expertise</h4>
               <div className="flex flex-wrap gap-1.5">
                 {skills.map((skill, index) => (
-                  <motion.span
+                  <span
                     key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.03 }}
-                    viewport={{ once: true }}
                     className="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full text-xs font-medium hover:bg-emerald-200 transition-colors duration-200"
                   >
                     {skill}
-                  </motion.span>
+                  </span>
                 ))}
               </div>
             </motion.div>

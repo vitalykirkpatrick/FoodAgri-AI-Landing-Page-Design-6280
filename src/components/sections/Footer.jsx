@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
 import Logo from './Logo';
@@ -9,6 +10,7 @@ import useModal from '../../hooks/useModal';
 const { FiMail, FiPhone, FiMapPin, FiLinkedin, FiTwitter, FiFacebook } = FiIcons;
 
 const Footer = () => {
+  const navigate = useNavigate();
   const disclaimerModal = useModal();
 
   const services = [
@@ -23,14 +25,26 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    'About Us',
-    'Services',
-    'Case Studies',
-    'Blog',
-    'Contact',
-    'Privacy Policy',
-    'Terms of Service'
+    { name: 'About Us', href: '#about' },
+    { name: 'Services', href: '#services' },
+    { name: 'Case Studies', href: '#' },
+    { name: 'Blog', href: '#' },
+    { name: 'Contact', href: '#' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Terms of Service', href: '/terms-of-use' },
+    { name: 'Cookie Policy', href: '/cookie-policy' }
   ];
+
+  const handleLinkClick = (href) => {
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate(href);
+    }
+  };
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -47,7 +61,7 @@ const Footer = () => {
             <div className="mb-6">
               <Logo size="normal" className="mb-4" />
               <p className="text-gray-400 leading-relaxed mb-6">
-                Empowering food and agriculture businesses with AI-powered sales automation, lead generation, and marketing solutions that drive real results.
+                Empowering food and agriculture businesses with <span className="text-blue-400">AI</span>-powered sales automation, lead generation, and marketing solutions that drive real results.
               </p>
             </div>
             <div className="space-y-3">
@@ -77,12 +91,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a
-                    href="#services"
-                    className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm"
+                  <button
+                    onClick={() => handleLinkClick('#services')}
+                    className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm text-left"
                   >
                     {service}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -99,12 +113,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm"
+                  <button
+                    onClick={() => handleLinkClick(link.href)}
+                    className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm text-left"
                   >
-                    {link}
-                  </a>
+                    {link.name}
+                  </button>
                 </li>
               ))}
             </ul>
@@ -166,21 +180,28 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © 2024 FoodAgri AI. All rights reserved. Transform your food business with intelligent sales automation.
+              © 2024 <span className="text-emerald-400">FoodAgri</span>{' '}
+              <span className="text-blue-400">AI</span>. All rights reserved. Transform your food business with intelligent sales automation.
             </p>
-            <div className="flex space-x-6">
-              <a
-                href="#"
+            <div className="flex flex-wrap justify-center md:justify-end space-x-6">
+              <button
+                onClick={() => navigate('/privacy-policy')}
                 className="text-gray-400 hover:text-emerald-400 text-sm transition-colors duration-200"
               >
                 Privacy Policy
-              </a>
-              <a
-                href="#"
+              </button>
+              <button
+                onClick={() => navigate('/terms-of-use')}
                 className="text-gray-400 hover:text-emerald-400 text-sm transition-colors duration-200"
               >
                 Terms of Service
-              </a>
+              </button>
+              <button
+                onClick={() => navigate('/cookie-policy')}
+                className="text-gray-400 hover:text-emerald-400 text-sm transition-colors duration-200"
+              >
+                Cookie Policy
+              </button>
               <button
                 onClick={disclaimerModal.openModal}
                 className="text-gray-400 hover:text-emerald-400 text-sm transition-colors duration-200"

@@ -40,11 +40,14 @@ const HeroMain = () => {
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Transform Your Food Business with{' '}
-            <span className="text-emerald-400">AI-Powered Growth</span>
+            <span className="text-emerald-400">
+              <span className="text-emerald-400">FoodAgri</span>{' '}
+              <span className="text-blue-400">AI</span>
+            </span>-Powered Growth
           </h1>
-
           <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
-            Stop losing sales to manual processes. FoodAgri AI automates your lead generation, fills your pipeline, and scales your revenue—specifically designed for food and agriculture businesses.
+            Stop losing sales to manual processes. <span className="text-emerald-400">FoodAgri</span>{' '}
+            <span className="text-blue-400">AI</span> automates your lead generation, fills your pipeline, and scales your revenue—specifically designed for food and agriculture businesses.
           </p>
 
           {/* Stats */}
@@ -80,7 +83,6 @@ const HeroMain = () => {
               </div>
               <span>Watch in Action</span>
             </button>
-
             <button
               onClick={demoModal.openModal}
               className="group bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"

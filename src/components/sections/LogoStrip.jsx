@@ -67,7 +67,8 @@ const LogoStrip = () => {
           className="text-center mt-12"
         >
           <p className="text-gray-700 max-w-3xl mx-auto">
-            These industry leaders understand that staying competitive means embracing AI-powered automation. Join them in transforming your sales, marketing, and operations with FoodAgri AI.
+            These industry leaders understand that staying competitive means embracing <span className="text-blue-600">AI</span>-powered automation. Join them in transforming your sales, marketing, and operations with <span className="text-emerald-600">FoodAgri</span>{' '}
+            <span className="text-blue-600">AI</span>.
           </p>
         </motion.div>
       </div>

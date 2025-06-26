@@ -28,8 +28,13 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <h1 className="text-2xl font-bold text-emerald-600 mb-2">FoodAgri AI</h1>
-            <p className="text-sm text-gray-600 uppercase tracking-wider">AI-Powered Sales & Marketing Platform</p>
+            <h1 className="text-2xl font-bold mb-2">
+              <span className="text-emerald-600">FoodAgri</span>{' '}
+              <span className="text-blue-600">AI</span>
+            </h1>
+            <p className="text-sm text-gray-600 uppercase tracking-wider">
+              <span className="text-blue-600">AI</span>-Powered Sales & Marketing Platform
+            </p>
           </motion.div>
 
           {/* Main Headline */}
@@ -50,7 +55,8 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-700 mb-12 max-w-5xl mx-auto leading-relaxed"
           >
-            For food and agriculture businesses overwhelmed by inefficient sales processes, compliance headaches, and slow growth, FoodAgri AI automates your lead generation, fills your pipeline, and keeps you audit-ready—without the tech headaches or generic tools that never fit your needs.
+            For food and agriculture businesses overwhelmed by inefficient sales processes, compliance headaches, and slow growth, <span className="text-emerald-600">FoodAgri</span>{' '}
+            <span className="text-blue-600">AI</span> automates your lead generation, fills your pipeline, and keeps you audit-ready—without the tech headaches or generic tools that never fit your needs.
           </motion.p>
 
           {/* Bullet Points */}
@@ -61,12 +67,30 @@ const Hero = () => {
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-6xl mx-auto"
           >
             {[
-              { icon: FiTrendingUp, text: "10x your lead generation with AI-powered B2B prospecting and appointment setting—no more wasted hours on manual research." },
-              { icon: FiUsers, text: "Scale your outreach with personalized cold email and LinkedIn campaigns that actually convert prospects to customers." },
-              { icon: FiTarget, text: "Leverage account-based marketing strategies to target high-value prospects in the food and agriculture industry." },
-              { icon: FiBarChart3, text: "Get comprehensive market research and competitor analysis to position your offerings strategically." },
-              { icon: FiHeadphones, text: "Access dedicated SDR services and sales enablement tools to accelerate your revenue growth." },
-              { icon: FiShield, text: "Maintain compliance documentation and audit readiness while focusing on what matters most—growing your business." }
+              {
+                icon: FiTrendingUp,
+                text: "10x your lead generation with <span class='text-blue-600'>AI</span>-powered B2B prospecting and appointment setting—no more wasted hours on manual research."
+              },
+              {
+                icon: FiUsers,
+                text: "Scale your outreach with personalized cold email and LinkedIn campaigns that actually convert prospects to customers."
+              },
+              {
+                icon: FiTarget,
+                text: "Leverage account-based marketing strategies to target high-value prospects in the food and agriculture industry."
+              },
+              {
+                icon: FiBarChart3,
+                text: "Get comprehensive market research and competitor analysis to position your offerings strategically."
+              },
+              {
+                icon: FiHeadphones,
+                text: "Access dedicated SDR services and sales enablement tools to accelerate your revenue growth."
+              },
+              {
+                icon: FiShield,
+                text: "Maintain compliance documentation and audit readiness while focusing on what matters most—growing your business."
+              }
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -81,7 +105,7 @@ const Hero = () => {
                       <SafeIcon icon={item.icon} className="w-6 h-6 text-emerald-600" />
                     </div>
                   </div>
-                  <p className="text-gray-700 text-left leading-relaxed">{item.text}</p>
+                  <p className="text-gray-700 text-left leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }}></p>
                 </div>
               </motion.div>
             ))}

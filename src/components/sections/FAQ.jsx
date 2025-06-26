@@ -74,7 +74,8 @@ const FAQ = () => {
             Frequently Asked <span className="text-emerald-600">Questions</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Get answers to the most common questions about FoodAgri AI and how it can transform your sales results.
+            Get answers to the most common questions about <span className="text-emerald-600">FoodAgri</span>{' '}
+            <span className="text-blue-600">AI</span> and how it can transform your sales results.
           </p>
         </motion.div>
 
