@@ -19,12 +19,12 @@ const DesiredOutcome = () => {
     },
     {
       icon: FiSettings,
-      title: "Automated Operations",
-      description: "Your marketing and compliance run like clockwork, with AI generating content, tracking trends, and handling documentation behind the scenes.",
+      title: "Sales & Marketing Automation",
+      description: "Your sales and marketing work in perfect harmony, with AI handling outreach, nurturing leads, and driving conversions automatically.",
       benefits: [
-        "Content generation that resonates",
-        "Real-time compliance monitoring",
-        "Streamlined audit preparation"
+        "Automated email sequences and follow-ups",
+        "AI-powered lead scoring and prioritization",
+        "Seamless CRM integration and pipeline management"
       ]
     },
     {
