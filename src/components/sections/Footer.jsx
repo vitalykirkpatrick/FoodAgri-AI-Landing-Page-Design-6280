@@ -3,10 +3,14 @@ import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
 import Logo from './Logo';
+import DisclaimerModal from '../modals/DisclaimerModal';
+import useModal from '../../hooks/useModal';
 
 const { FiMail, FiPhone, FiMapPin, FiLinkedin, FiTwitter, FiFacebook } = FiIcons;
 
 const Footer = () => {
+  const disclaimerModal = useModal();
+
   const services = [
     'Appointment Setting',
     'B2B Lead Generation',
@@ -46,7 +50,6 @@ const Footer = () => {
                 Empowering food and agriculture businesses with AI-powered sales automation, lead generation, and marketing solutions that drive real results.
               </p>
             </div>
-
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <SafeIcon icon={FiMail} className="w-5 h-5 text-emerald-400" />
@@ -118,7 +121,6 @@ const Footer = () => {
             <p className="text-gray-400 text-sm mb-4">
               Get the latest insights on food industry sales and marketing trends.
             </p>
-
             <div className="mb-6">
               <div className="flex">
                 <input
@@ -131,7 +133,6 @@ const Footer = () => {
                 </button>
               </div>
             </div>
-
             <div className="flex space-x-4">
               <a
                 href="#"
@@ -168,19 +169,30 @@ const Footer = () => {
               © 2024 FoodAgri AI. All rights reserved. Transform your food business with intelligent sales automation.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors duration-200">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-emerald-400 text-sm transition-colors duration-200"
+              >
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors duration-200">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-emerald-400 text-sm transition-colors duration-200"
+              >
                 Terms of Service
               </a>
-              <a href="#" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors duration-200">
-                Cookie Policy
-              </a>
+              <button
+                onClick={disclaimerModal.openModal}
+                className="text-gray-400 hover:text-emerald-400 text-sm transition-colors duration-200"
+              >
+                Disclaimer
+              </button>
             </div>
           </div>
         </motion.div>
       </div>
+
+      <DisclaimerModal isOpen={disclaimerModal.isOpen} onClose={disclaimerModal.closeModal} />
     </footer>
   );
 };

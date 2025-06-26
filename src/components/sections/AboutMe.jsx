@@ -8,28 +8,28 @@ const { FiAward, FiTrendingUp, FiUsers, FiTarget } = FiIcons;
 const AboutMe = () => {
   const achievements = [
     { icon: FiAward, number: "18+", label: "Years in Enterprise Sales" },
-    { icon: FiTrendingUp, number: "$50M+", label: "Revenue Growth Generated" },
-    { icon: FiUsers, number: "500+", label: "Businesses Transformed" },
-    { icon: FiTarget, number: "95%", label: "Client Success Rate" }
+    { icon: FiTrendingUp, number: "$5M+", label: "Revenue Generated" },
+    { icon: FiUsers, number: "Fortune 500", label: "Clients Served" },
+    { icon: FiTarget, number: "170%", label: "Peak Sales Growth" }
   ];
 
   const skills = [
     'Enterprise Sales Leadership',
-    'AI Implementation',
-    'Food Industry Expertise',
-    'Business Development',
+    'Food Industry Sales',
+    'SaaS & Cloud Solutions',
+    'Account Management',
     'Lead Generation',
     'Sales Automation',
-    'CRM Integration',
-    'Account-Based Marketing',
-    'Cold Email Outreach',
-    'LinkedIn Sales',
-    'Market Research',
-    'Compliance Management',
+    'CRM Systems (Salesforce, SAP)',
+    'Strategic Territory Management',
+    'Analytical Instrumentation',
+    'Quality Management Systems',
+    'Food Safety Compliance',
+    'Agricultural Technology',
+    'Business Development',
     'Revenue Operations',
-    'Sales Process Optimization',
     'Customer Success',
-    'Business Intelligence',
+    'IoT Solutions',
     'Data Analytics',
     'Pipeline Management'
   ];
@@ -78,13 +78,19 @@ const AboutMe = () => {
                 </h3>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>
-                    With over 18 years of enterprise sales leadership, I've dedicated my career to helping food and agriculture businesses unlock their potential through innovative technology solutions. My journey spans from analytical instrumentation to cloud-based platforms, always with one focus: driving measurable results for my clients.
+                    My journey began in the kitchen, not the boardroom. As an orphan in Ukraine, the kitchen was my first refuge—a place where I discovered belonging, purpose, and the value of uncompromising quality. Those early mornings kneading dough and learning from master chefs taught me patience, resilience, and the science behind every ingredient. Graduating as valedictorian from culinary school, I learned that great food is both an art and a science—a lesson that would shape every step of my career.
                   </p>
                   <p>
-                    <strong>The problem I kept seeing everywhere:</strong> Food and agriculture businesses were stuck using generic sales and marketing approaches that didn't understand their unique challenges—from complex buyer journeys to seasonal market fluctuations.
+                    Driven by curiosity, I transitioned from culinary arts to electronics engineering and, later, to advanced food quality control. My path led me from the heat of restaurant kitchens to the precision of NIR (Near-Infrared) spectroscopy and data-driven quality assurance. Along the way, I earned degrees in electronics and computer science, and ultimately an MBA—each chapter deepening my understanding of how technology can transform food manufacturing.
                   </p>
                   <p>
-                    My approach combines deep industry knowledge with proven sales methodologies and emerging AI technologies. I don't just sell solutions—I partner with you to ensure your business transformation delivers the ROI you need to thrive in today's competitive market.
+                    Throughout my career, I've worked with industry leaders like Cargill, Nestlé, ADM, Tyson Foods, PepsiCo, and Darigold, helping them implement technology solutions that drive real business outcomes. I know firsthand the challenges of food safety, quality management, and the unique sales cycles that define our industry—because I've lived them from both sides: as a chef and as a technologist.
+                  </p>
+                  <p>
+                    Today, I'm passionate about bridging the gap between tradition and innovation. With FoodAgri AI, I help food and agriculture businesses unlock their potential—automating what's tedious, personalizing what matters, and ensuring quality at every step. My mission is simple: to empower you with the technology, insights, and support you need to thrive in a rapidly evolving industry—without ever losing sight of the values that make great food possible.
+                  </p>
+                  <p className="font-semibold text-emerald-700">
+                    Let's build the future of food, together.
                   </p>
                 </div>
               </div>
@@ -119,12 +125,14 @@ const AboutMe = () => {
               <h4 className="text-xl font-bold mb-4">Credentials & Experience</h4>
               <ul className="space-y-2">
                 {[
-                  '18+ years of enterprise sales leadership experience',
-                  'Former VP of Business Development at Fortune 500 food company',
-                  'Led $50M+ revenue generation projects',
-                  'Expert in analytical instrumentation and cloud platforms',
-                  'Speaker at 15+ industry conferences',
-                  'Advisor to food tech startups and established brands'
+                  '18+ years enterprise sales leadership',
+                  'MBA from University of Utah with two Bachelor degrees in Computer Science and Electronics',
+                  'Worked with Fortune 500 clients: Cargill, Nestlé, ADM, Tyson Foods',
+                  'Salesforce Certified Administrator (SCA)',
+                  'Founded and scaled SaaS/IoT startup with 135+ clients',
+                  'Generated $5M+ in revenue through strategic sales initiatives',
+                  'Expert in analytical instrumentation and quality management systems',
+                  'Deep understanding of food safety regulations and compliance'
                 ].map((credential, index) => (
                   <li key={index} className="flex items-start space-x-2">
                     <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
 import SchedulingModal from '../modals/SchedulingModal';
+import ContactFormModal from '../modals/ContactFormModal';
 import useModal from '../../hooks/useModal';
 
 const { FiPlus, FiMinus } = FiIcons;
@@ -10,6 +11,7 @@ const { FiPlus, FiMinus } = FiIcons;
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
   const schedulingModal = useModal();
+  const contactModal = useModal();
 
   const faqs = [
     {
@@ -100,7 +102,6 @@ const FAQ = () => {
                   />
                 </div>
               </button>
-
               <motion.div
                 initial={false}
                 animate={{
@@ -143,7 +144,10 @@ const FAQ = () => {
               >
                 Schedule Free Consultation
               </button>
-              <button className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">
+              <button
+                onClick={contactModal.openModal}
+                className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors"
+              >
                 Email Us Your Questions
               </button>
             </div>
@@ -152,6 +156,7 @@ const FAQ = () => {
       </div>
 
       <SchedulingModal isOpen={schedulingModal.isOpen} onClose={schedulingModal.closeModal} />
+      <ContactFormModal isOpen={contactModal.isOpen} onClose={contactModal.closeModal} />
     </section>
   );
 };

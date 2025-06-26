@@ -32,7 +32,7 @@ const ProductIntro = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+    <section id="process" className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Product Introduction */}
         <motion.div
@@ -96,7 +96,7 @@ const ProductIntro = () => {
         >
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 bg-emerald-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-              <span className="text-2xl font-bold text-white">F</span>
+              <span className="text-2xl font-bold text-white">V</span>
             </div>
             <blockquote className="text-xl md:text-2xl text-white mb-6 leading-relaxed italic">
               "I understand the unique challenges facing the food and agriculture industry—from compliance and traceability requirements to the pressure for sustainable operations and profitable growth. That's why I founded FoodAgri AI: to bring cutting-edge artificial intelligence solutions specifically tailored to address these pain points."
