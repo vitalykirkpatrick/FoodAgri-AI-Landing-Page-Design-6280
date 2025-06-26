@@ -6,7 +6,10 @@ import SafeIcon from '../../common/SafeIcon';
 import SchedulingModal from '../modals/SchedulingModal';
 import useModal from '../../hooks/useModal';
 
-const { FiTarget, FiEdit3, FiShield, FiHeadphones, FiTrendingUp, FiUsers, FiSearch, FiLinkedin } = FiIcons;
+const { 
+  FiTarget, FiEdit3, FiShield, FiHeadphones, FiTrendingUp, 
+  FiUsers, FiSearch, FiLinkedin 
+} = FiIcons;
 
 const OurServices = () => {
   const navigate = useNavigate();
@@ -112,8 +115,8 @@ const OurServices = () => {
     }
   ];
 
-  const handleServiceClick = (slug) => {
-    navigate(`/services/${slug}`);
+  const handleViewPackages = () => {
+    navigate('/all-in-one-growth-suite');
   };
 
   return (
@@ -145,7 +148,7 @@ const OurServices = () => {
               className={`relative bg-white rounded-2xl p-6 shadow-lg border-2 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer ${
                 service.isPopular ? 'border-emerald-400' : 'border-gray-100'
               }`}
-              onClick={() => handleServiceClick(service.slug)}
+              onClick={handleViewPackages}
             >
               {service.isPopular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -175,7 +178,7 @@ const OurServices = () => {
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    handleServiceClick(service.slug);
+                    handleViewPackages();
                   }}
                   className={`w-full py-2 px-4 rounded-xl font-semibold text-sm transition-all duration-300 ${
                     service.isPopular

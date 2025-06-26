@@ -2,6 +2,14 @@ import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import ServicePage from './components/ServicePage';
+import AllInOneGrowthSuitePage from './components/AllInOneGrowthSuitePage';
+import GrowthAcceleratorPage from './components/GrowthAcceleratorPage';
+import SalesPerformancePage from './components/SalesPerformancePage';
+import MarketingExcellencePage from './components/MarketingExcellencePage';
+import CustomerExperiencePage from './components/CustomerExperiencePage';
+import OnboardingTrainingPage from './components/OnboardingTrainingPage';
+import PartnershipChannelPage from './components/PartnershipChannelPage';
+import DataIntelligencePage from './components/DataIntelligencePage';
 import TermsOfUsePage from './components/TermsOfUsePage';
 import DataHandlingPage from './components/DataHandlingPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
@@ -16,6 +24,14 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/services/:serviceId" element={<ServicePage />} />
+          <Route path="/all-in-one-growth-suite" element={<AllInOneGrowthSuitePage />} />
+          <Route path="/growth-accelerator-bundle" element={<GrowthAcceleratorPage />} />
+          <Route path="/sales-performance-bundle" element={<SalesPerformancePage />} />
+          <Route path="/marketing-excellence-bundle" element={<MarketingExcellencePage />} />
+          <Route path="/customer-experience-bundle" element={<CustomerExperiencePage />} />
+          <Route path="/onboarding-training-bundle" element={<OnboardingTrainingPage />} />
+          <Route path="/partnership-channel-bundle" element={<PartnershipChannelPage />} />
+          <Route path="/data-intelligence-bundle" element={<DataIntelligencePage />} />
           <Route path="/terms-of-use" element={<TermsOfUsePage />} />
           <Route path="/data-handling-deletion-schedule" element={<DataHandlingPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
