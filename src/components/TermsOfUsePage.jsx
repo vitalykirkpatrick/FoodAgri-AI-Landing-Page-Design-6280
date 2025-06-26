@@ -36,34 +36,30 @@ const TermsOfUsePage = () => {
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
               Please read these terms carefully before using FoodAgri AI services
             </p>
+            <div className="bg-emerald-50 rounded-2xl p-6 mb-8">
+              <p className="text-sm text-gray-700 mb-2">
+                <strong>Effective Date:</strong> June 25, 2025
+              </p>
+              <p className="text-sm text-gray-700">
+                <strong>Between:</strong> FoodAgri AI LLC, a Wyoming Limited Liability Company, 30 N Gould St Ste R, Sheridan, WY 82801 and You, the individual or entity accessing or using the FoodAgri AI platform and services.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Terms Content */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="prose prose-lg max-w-none"
+            className="space-y-16"
           >
-            <div className="bg-gray-50 rounded-2xl p-8 mb-8">
-              <p className="text-sm text-gray-600 mb-4">
-                <strong>Effective Date:</strong> June 25, 2025
-              </p>
-              <p className="text-sm text-gray-600 mb-4">
-                <strong>Between:</strong><br />
-                FoodAgri AI LLC, a Wyoming Limited Liability Company, 30 N Gould St Ste R, Sheridan, WY 82801 ("FoodAgri AI", "we", "us", or "our")<br />
-                and<br />
-                You, the individual or entity accessing or using the FoodAgri AI platform and services ("User", "you", or "your").
-              </p>
-            </div>
-
-            <div className="space-y-12">
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">1. Introduction and Acceptance</h2>
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">1. Introduction and Acceptance</h2>
+              <div className="bg-emerald-50 rounded-2xl p-8">
                 <p className="text-gray-700 leading-relaxed mb-4">
                   By accessing, browsing, or using the FoodAgri AI website, platform, or services, you agree to be bound by these Terms of Use and our{' '}
                   <button 
@@ -76,11 +72,13 @@ const TermsOfUsePage = () => {
                 <p className="text-gray-700 leading-relaxed">
                   Your explicit acceptance by clicking "I Agree" (or similar) during account creation, subscription, or feature access, or continued use after notice of changes, constitutes acceptance. These Terms constitute a legally binding agreement.
                 </p>
-              </section>
+              </div>
+            </section>
 
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">2. Definitions</h2>
-                <ul className="space-y-3 text-gray-700">
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">2. Definitions</h2>
+              <div className="bg-blue-50 rounded-2xl p-8">
+                <ul className="space-y-4 text-gray-700">
                   <li><strong>"Services":</strong> AI-powered SaaS solutions including but not limited to AI Lead Generation & Qualification, AI Content Creation & Marketing Automation, AI Sales Call Review & Coaching, AI Customer Service Automation, AI Data Analysis & Reporting, Compliance & Traceability Automation, Client Onboarding & Support, and Additional AI Solutions.</li>
                   <li><strong>"Platform":</strong> The FoodAgri AI software and infrastructure.</li>
                   <li><strong>"User Content":</strong> Data or content you upload or provide.</li>
@@ -93,16 +91,18 @@ const TermsOfUsePage = () => {
                   Definitions in our{' '}
                   <button 
                     onClick={() => navigate('/privacy-policy')}
-                    className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                    className="text-blue-600 hover:text-blue-700 underline font-medium"
                   >
                     Privacy Policy
                   </button>{' '}
                   are incorporated by reference.
                 </p>
-              </section>
+              </div>
+            </section>
 
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">3. Website Access and Use</h2>
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">3. Website Access and Use</h2>
+              <div className="bg-red-50 rounded-2xl p-8">
                 <ul className="space-y-3 text-gray-700 list-disc ml-6">
                   <li>Access is permitted only for users aged 18 or older.</li>
                   <li>FoodAgri AI LLC reserves the right to deny access to any person or entity for any reason, at its sole discretion, and to block or terminate any account or usage without notice.</li>
@@ -113,14 +113,16 @@ const TermsOfUsePage = () => {
                   <li>FoodAgri AI LLC is not responsible for any damage to your computer, device, or data resulting from your use of the website, downloads, or interactions with any content or advertising.</li>
                   <li>By using this website and services, you waive all rights to claims of damage of any description except as expressly provided in these Terms. You agree to indemnify and hold harmless FoodAgri AI LLC from any claims, damages, or losses arising from your use, misuse, or violation of these Terms.</li>
                 </ul>
-              </section>
+              </div>
+            </section>
 
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">4. Services Offered</h2>
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">4. Services Offered</h2>
+              <div className="bg-purple-50 rounded-2xl p-8">
                 <p className="text-gray-700 leading-relaxed mb-4">
                   FoodAgri AI LLC provides scalable AI-powered SaaS solutions for food and agriculture businesses, including:
                 </p>
-                <ul className="space-y-3 text-gray-700 list-disc ml-6">
+                <ul className="space-y-3 text-gray-700 list-disc ml-6 mb-4">
                   <li><strong>AI Lead Generation & Qualification:</strong> Automated prospecting, segmentation, scoring, and outreach.</li>
                   <li><strong>AI Content Creation & Marketing Automation:</strong> Automated content generation and campaign scheduling.</li>
                   <li><strong>AI Sales Call Review & Coaching:</strong> Analysis and feedback on sales calls.</li>
@@ -130,15 +132,17 @@ const TermsOfUsePage = () => {
                   <li><strong>Client Onboarding & Support:</strong> Automated onboarding workflows and AI-powered support.</li>
                   <li><strong>Additional AI Solutions:</strong> Advertising automation, workflow optimization, and more.</li>
                 </ul>
-                <p className="text-gray-700 leading-relaxed mt-4">
-                  A current list of features is available at [insert URL]. We may update, modify, or discontinue services with 30 days' notice.
+                <p className="text-gray-700 leading-relaxed">
+                  We may update, modify, or discontinue services with 30 days' notice.
                 </p>
-              </section>
+              </div>
+            </section>
 
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">5. User Responsibilities</h2>
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">5. User Responsibilities</h2>
+              <div className="bg-yellow-50 rounded-2xl p-8">
                 <p className="text-gray-700 leading-relaxed mb-4">You agree to:</p>
-                <ul className="space-y-3 text-gray-700 list-disc ml-6">
+                <ul className="space-y-3 text-gray-700 list-disc ml-6 mb-4">
                   <li>Maintain account security and notify us of unauthorized access.</li>
                   <li>Use the platform in compliance with all laws and our Acceptable Use Policy.</li>
                   <li>Ensure all data you provide is accurate and that you have rights to use it.</li>
@@ -146,26 +150,30 @@ const TermsOfUsePage = () => {
                   <li>Not misuse the platform or outputs for unlawful, harmful, or competitive purposes.</li>
                   <li>Obtain all necessary consents for personal data you upload.</li>
                 </ul>
-                <p className="text-gray-700 leading-relaxed mt-4">
+                <p className="text-gray-700 leading-relaxed">
                   Breach may result in suspension or termination.
                 </p>
-              </section>
+              </div>
+            </section>
 
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">6. Intellectual Property Rights</h2>
-                <ul className="space-y-3 text-gray-700 list-disc ml-6">
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">6. Intellectual Property Rights</h2>
+              <div className="bg-indigo-50 rounded-2xl p-8">
+                <ul className="space-y-3 text-gray-700 list-disc ml-6 mb-4">
                   <li>All platform IP is owned by FoodAgri AI LLC. You receive a limited, non-exclusive, non-transferable, revocable license for internal business use.</li>
                   <li>You retain ownership of your data but grant us a license to use it for service provision.</li>
                   <li>AI-generated outputs are for your internal use only; all rights to underlying algorithms and technology remain with FoodAgri AI LLC.</li>
                   <li>You may not reverse engineer, copy, modify, distribute, or use the platform to build competing products.</li>
                 </ul>
-                <p className="text-gray-700 leading-relaxed mt-4">
-                  <strong>Third-Party Components:</strong> Some platform features use open-source or third-party libraries, subject to their own licenses. See [insert URL] for a current list.
+                <p className="text-gray-700 leading-relaxed">
+                  <strong>Third-Party Components:</strong> Some platform features use open-source or third-party libraries, subject to their own licenses.
                 </p>
-              </section>
+              </div>
+            </section>
 
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">7. Data Privacy and Jurisdictional Compliance</h2>
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">7. Data Privacy and Jurisdictional Compliance</h2>
+              <div className="bg-green-50 rounded-2xl p-8">
                 <p className="text-gray-700 leading-relaxed mb-4">
                   FoodAgri AI LLC is committed to protecting user data and complying with all applicable data privacy laws, including but not limited to the California Consumer Privacy Act (CCPA), the General Data Protection Regulation (GDPR), and other relevant state, federal, and international regulations.
                 </p>
@@ -176,7 +184,7 @@ const TermsOfUsePage = () => {
                   For detailed information on how personal data is collected, used, stored, and protected, and on user rights under applicable data privacy laws, please refer to our{' '}
                   <button 
                     onClick={() => navigate('/privacy-policy')}
-                    className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                    className="text-green-600 hover:text-green-700 underline font-medium"
                   >
                     Privacy Policy
                   </button>{' '}
@@ -185,10 +193,12 @@ const TermsOfUsePage = () => {
                 <p className="text-gray-700 leading-relaxed">
                   Users are responsible for ensuring that any personal data they provide to FoodAgri AI LLC is collected and disclosed in compliance with applicable data privacy laws, including obtaining all necessary consents.
                 </p>
-              </section>
+              </div>
+            </section>
 
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">8. Payment Terms</h2>
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">8. Payment Terms</h2>
+              <div className="bg-orange-50 rounded-2xl p-8">
                 <ul className="space-y-3 text-gray-700 list-disc ml-6">
                   <li>Payments are in USD via credit card or wire transfer.</li>
                   <li>Subscriptions auto-renew monthly unless canceled 7 days before renewal.</li>
@@ -198,10 +208,12 @@ const TermsOfUsePage = () => {
                   <li>You are responsible for all taxes.</li>
                   <li>We may update payment terms with 30 days' notice.</li>
                 </ul>
-              </section>
+              </div>
+            </section>
 
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">9. Limitation of Liability</h2>
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">9. Limitation of Liability</h2>
+              <div className="bg-red-50 rounded-2xl p-8">
                 <p className="text-gray-700 leading-relaxed mb-4">
                   To the maximum extent permitted by law, FoodAgri AI LLC is not liable for indirect, incidental, special, consequential, punitive, or exemplary damages, including lost profits, data, or business interruption, even if advised of the possibility.
                 </p>
@@ -211,10 +223,12 @@ const TermsOfUsePage = () => {
                 <p className="text-gray-700 leading-relaxed">
                   Some jurisdictions do not allow certain limitations; only legally allowed limitations apply.
                 </p>
-              </section>
+              </div>
+            </section>
 
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">10. Indemnification</h2>
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">10. Indemnification</h2>
+              <div className="bg-blue-50 rounded-2xl p-8">
                 <p className="text-gray-700 leading-relaxed mb-4">
                   You agree to indemnify, defend, and hold harmless FoodAgri AI LLC from any claims, damages, or losses arising from your misuse, breach of these Terms, or violation of law or third-party rights.
                 </p>
@@ -224,29 +238,32 @@ const TermsOfUsePage = () => {
                 <p className="text-gray-700 leading-relaxed">
                   Indemnification is subject to the liability cap unless prohibited by law.
                 </p>
-              </section>
+              </div>
+            </section>
 
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">11. Termination and Data Export</h2>
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">11. Termination and Data Export</h2>
+              <div className="bg-purple-50 rounded-2xl p-8">
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Either party may terminate with notice. Upon termination, you have 30 days to access and export your data. After this period, FoodAgri AI LLC may delete all data associated with your account, except as required by law. If you fail to export data within this period, FoodAgri AI LLC will not be liable for any resulting loss. Additional details, including procedures for data export, secure deletion, retention exceptions, and transition assistance, are set forth in the{' '}
                   <button 
                     onClick={() => navigate('/data-handling-deletion-schedule')}
-                    className="text-blue-600 hover:text-blue-700 underline font-medium"
+                    className="text-purple-600 hover:text-purple-700 underline font-medium"
                   >
                     Data Handling and Deletion Schedule
-                  </button>
-                  , incorporated herein by reference.
+                  </button>, incorporated herein by reference.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   We may suspend or terminate your access for breach, non-payment, or misuse.
                 </p>
-              </section>
+              </div>
+            </section>
 
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">12. Dispute Resolution and Class Action Waiver</h2>
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">12. Dispute Resolution and Class Action Waiver</h2>
+              <div className="bg-yellow-50 rounded-2xl p-8">
                 <p className="text-gray-700 leading-relaxed mb-4">Disputes will be resolved by:</p>
-                <ol className="space-y-2 text-gray-700 list-decimal ml-6">
+                <ol className="space-y-2 text-gray-700 list-decimal ml-6 mb-4">
                   <li>Good faith negotiation (30 days)</li>
                   <li>Mediation (45 days, via JAMS or similar provider)</li>
                   <li>Binding arbitration in Sheridan County, Wyoming, under JAMS rules (unless law requires otherwise).</li>
@@ -257,20 +274,24 @@ const TermsOfUsePage = () => {
                 <p className="text-gray-700 leading-relaxed">
                   If any part of this section is unenforceable in a jurisdiction, the remainder remains in effect.
                 </p>
-              </section>
+              </div>
+            </section>
 
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">13. Disclaimer of Warranties</h2>
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">13. Disclaimer of Warranties</h2>
+              <div className="bg-gray-50 rounded-2xl p-8">
                 <p className="text-gray-700 leading-relaxed mb-4">
                   FoodAgri AI LLC makes no warranties regarding the accuracy, completeness, or reliability of any content, AI-generated output, or information provided. Use of the website and services is at your own risk.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   We are not responsible for any damage to your computer, device, or data resulting from your use of the website, downloads, or interactions with any content or advertising.
                 </p>
-              </section>
+              </div>
+            </section>
 
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">14. Miscellaneous</h2>
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">14. Miscellaneous</h2>
+              <div className="bg-teal-50 rounded-2xl p-8">
                 <ul className="space-y-3 text-gray-700 list-disc ml-6">
                   <li><strong>Governing Law:</strong> Wyoming, except where mandatory data privacy or consumer protection laws apply.</li>
                   <li><strong>Severability:</strong> If any provision is invalid, the rest remain effective.</li>
@@ -279,34 +300,43 @@ const TermsOfUsePage = () => {
                   <li><strong>Entire Agreement:</strong> This document, together with the{' '}
                     <button 
                       onClick={() => navigate('/privacy-policy')}
-                      className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                      className="text-teal-600 hover:text-teal-700 underline font-medium"
                     >
                       Privacy Policy
                     </button>, Acceptable Use Policy, Service Schedule, and{' '}
                     <button 
                       onClick={() => navigate('/data-handling-deletion-schedule')}
-                      className="text-blue-600 hover:text-blue-700 underline font-medium"
+                      className="text-teal-600 hover:text-teal-700 underline font-medium"
                     >
                       Data Handling Schedule
-                    </button>
-                    , constitutes the entire agreement.</li>
+                    </button>, constitutes the entire agreement.</li>
                 </ul>
-              </section>
-
-              <section>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">15. Contact Information</h2>
-                <p className="text-gray-700 leading-relaxed mb-4">For questions or legal notices, contact:</p>
-                <p className="text-gray-700 leading-relaxed">
-                  <a href="mailto:support@foodagriai.com" className="text-emerald-600 hover:text-emerald-700">support@foodagriai.com</a><br />
-                  FoodAgri AI LLC, 30 N Gould St Ste R, Sheridan, WY 82801
-                </p>
-              </section>
-
-              <div className="border-t border-gray-200 pt-8 mt-12">
-                <p className="text-sm text-gray-500 italic">
-                  Last updated: June 25, 2025
-                </p>
               </div>
+            </section>
+
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">15. Contact Information</h2>
+              <div className="bg-emerald-50 rounded-2xl p-8 border border-emerald-200 text-center">
+                <p className="text-gray-700 leading-relaxed mb-4">For questions or legal notices, contact:</p>
+                <div className="space-y-2 text-gray-700">
+                  <p><strong>Email:</strong> <a href="mailto:support@foodagriai.com" className="text-emerald-600 hover:text-emerald-700">support@foodagriai.com</a></p>
+                  <p><strong>Mail:</strong> FoodAgri AI LLC, 30 N Gould St Ste R, Sheridan, WY 82801</p>
+                </div>
+                <div className="mt-6">
+                  <button
+                    onClick={() => navigate('/data-rights-request')}
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  >
+                    Submit Data Rights Request
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <div className="border-t border-gray-200 pt-8 text-center">
+              <p className="text-sm text-gray-500 italic">
+                Last updated: June 25, 2025
+              </p>
             </div>
           </motion.div>
         </div>

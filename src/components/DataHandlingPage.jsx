@@ -177,7 +177,6 @@ const DataHandlingPage = () => {
                     <li><strong>API-Based Deletion:</strong> For cloud storage, use provider APIs to permanently delete records and objects.</li>
                   </ul>
                 </div>
-
                 <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
                   <div className="flex items-center mb-4">
                     <SafeIcon icon={FiShield} className="w-6 h-6 text-blue-600 mr-3" />
@@ -215,7 +214,14 @@ const DataHandlingPage = () => {
               <div className="bg-green-50 rounded-2xl p-8 border border-green-200">
                 <ul className="space-y-4 text-gray-700">
                   <li>
-                    <strong>Right to Deletion:</strong> Users may request deletion of their personal data at any time (subject to legal exceptions). Submit requests via our Data Rights Request Form or contact privacy@foodagriai.com.
+                    <strong>Right to Deletion:</strong> Users may request deletion of their personal data at any time (subject to legal exceptions). Submit requests via our{' '}
+                    <button 
+                      onClick={() => navigate('/data-rights-request')}
+                      className="text-green-600 hover:text-green-700 underline font-medium"
+                    >
+                      Data Rights Request Form
+                    </button>{' '}
+                    or contact privacy@foodagriai.com.
                   </li>
                   <li>
                     <strong>Verification:</strong> We will verify your identity before processing the request.
@@ -299,10 +305,24 @@ const DataHandlingPage = () => {
                 <p className="text-gray-700 leading-relaxed mb-6">
                   For questions about this schedule or to exercise your data rights, contact:
                 </p>
-                <div className="space-y-2 text-gray-700">
+                <div className="space-y-2 text-gray-700 mb-6">
                   <p><strong>Email:</strong> <a href="mailto:privacy@foodagriai.com" className="text-emerald-600 hover:text-emerald-700">privacy@foodagriai.com</a></p>
                   <p><strong>Phone:</strong> <a href="tel:+13075551234" className="text-emerald-600 hover:text-emerald-700">+1 (307) 555-1234</a></p>
                   <p><strong>Mail:</strong> FoodAgri AI LLC, 30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
+                </div>
+                <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                  <button
+                    onClick={() => navigate('/data-rights-request')}
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  >
+                    Submit Data Rights Request
+                  </button>
+                  <button
+                    onClick={() => navigate('/privacy-policy')}
+                    className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors"
+                  >
+                    View Privacy Policy
+                  </button>
                 </div>
               </div>
             </section>

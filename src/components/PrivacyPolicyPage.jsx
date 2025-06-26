@@ -430,7 +430,13 @@ const PrivacyPolicyPage = () => {
                   <li><strong>Right to Withdraw Consent:</strong> Withdraw consent at any time (does not affect prior processing).</li>
                 </ul>
                 <p className="text-gray-700 leading-relaxed">
-                  To exercise your rights, use our Data Rights Request Form, email <a href="mailto:privacy@foodagriai.com" className="text-green-600 hover:text-green-700">privacy@foodagriai.com</a>, call <a href="tel:+13075551234" className="text-green-600 hover:text-green-700">+1 (307) 555-1234</a>, or write to our address above. We will verify your identity and respond within the timeframe required by law.
+                  To exercise your rights, use our{' '}
+                  <button 
+                    onClick={() => navigate('/data-rights-request')}
+                    className="text-green-600 hover:text-green-700 underline font-medium"
+                  >
+                    Data Rights Request Form
+                  </button>, email <a href="mailto:privacy@foodagriai.com" className="text-green-600 hover:text-green-700">privacy@foodagriai.com</a>, call <a href="tel:+13075551234" className="text-green-600 hover:text-green-700">+1 (307) 555-1234</a>, or write to our address above. We will verify your identity and respond within the timeframe required by law.
                 </p>
               </div>
             </section>
@@ -474,6 +480,14 @@ const PrivacyPolicyPage = () => {
                   <p><strong>Email:</strong> <a href="mailto:privacy@foodagriai.com" className="text-emerald-600 hover:text-emerald-700">privacy@foodagriai.com</a></p>
                   <p><strong>Phone:</strong> <a href="tel:+13075551234" className="text-emerald-600 hover:text-emerald-700">+1 (307) 555-1234</a></p>
                   <p><strong>Mail:</strong> FoodAgri AI LLC, 30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
+                </div>
+                <div className="mt-6">
+                  <button
+                    onClick={() => navigate('/data-rights-request')}
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  >
+                    Submit Data Rights Request
+                  </button>
                 </div>
               </div>
             </section>

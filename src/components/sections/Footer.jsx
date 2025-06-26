@@ -5,6 +5,7 @@ import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
 import Logo from './Logo';
 import DisclaimerModal from '../modals/DisclaimerModal';
+import ContactFormModal from '../modals/ContactFormModal';
 import useModal from '../../hooks/useModal';
 
 const { FiMail, FiPhone, FiMapPin, FiLinkedin, FiTwitter, FiFacebook } = FiIcons;
@@ -12,6 +13,7 @@ const { FiMail, FiPhone, FiMapPin, FiLinkedin, FiTwitter, FiFacebook } = FiIcons
 const Footer = () => {
   const navigate = useNavigate();
   const disclaimerModal = useModal();
+  const contactModal = useModal();
 
   const services = [
     'Appointment Setting',
@@ -29,14 +31,16 @@ const Footer = () => {
     { name: 'Services', href: '#services' },
     { name: 'Case Studies', href: '#' },
     { name: 'Blog', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Contact', action: 'contact' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Terms of Service', href: '/terms-of-use' },
     { name: 'Cookie Policy', href: '/cookie-policy' }
   ];
 
-  const handleLinkClick = (href) => {
-    if (href.startsWith('#')) {
+  const handleLinkClick = (href, action) => {
+    if (action === 'contact') {
+      contactModal.openModal();
+    } else if (href.startsWith('#')) {
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -114,7 +118,7 @@ const Footer = () => {
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <button
-                    onClick={() => handleLinkClick(link.href)}
+                    onClick={() => handleLinkClick(link.href, link.action)}
                     className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm text-left"
                   >
                     {link.name}
@@ -214,6 +218,7 @@ const Footer = () => {
       </div>
 
       <DisclaimerModal isOpen={disclaimerModal.isOpen} onClose={disclaimerModal.closeModal} />
+      <ContactFormModal isOpen={contactModal.isOpen} onClose={contactModal.closeModal} />
     </footer>
   );
 };

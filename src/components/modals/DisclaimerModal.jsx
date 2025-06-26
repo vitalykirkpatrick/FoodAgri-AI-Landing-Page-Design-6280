@@ -1,12 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
 
 const { FiX } = FiIcons;
 
 const DisclaimerModal = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
+
   if (!isOpen) return null;
+
+  const handlePolicyLinkClick = (path) => {
+    onClose();
+    navigate(path);
+  };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -25,75 +33,163 @@ const DisclaimerModal = ({ isOpen, onClose }) => {
             <SafeIcon icon={FiX} className="w-6 h-6" />
           </button>
         </div>
-        
+
         <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
-          <div className="prose max-w-none text-gray-700 leading-relaxed space-y-4">
-            <p>
-              This web site and its information and services are provided for educational guidance and informational purposes only.
+          <div className="prose max-w-none text-gray-700 leading-relaxed space-y-6">
+            <p className="text-sm text-gray-600 mb-4">
+              <strong>FoodAgri AI LLC</strong>
             </p>
-            
+
             <p>
-              The information contained herein has been compiled from sources deemed reliable and it is accurate to the best of our knowledge and belief; however, FoodAgri AI/Vitaly Kirkpatrick cannot guarantee as to its accuracy, completeness and validity and cannot be held liable for any errors or omissions. Changes are periodically made to this web site and may be made at any time.
+              FoodAgri AI LLC ("FoodAgri AI," "we," "us," or "our") provides this website, platform, and all related services for informational, educational, and business guidance purposes only. All information, tools, and AI-generated outputs are intended to support your decision-making but should not be solely relied upon for critical business, legal, financial, or regulatory actions. You are responsible for independently verifying any information or recommendations before acting upon them.
             </p>
-            
-            <p>
-              All information contained herein should be independently verified and confirmed.
-            </p>
-            
-            <p>
-              FoodAgri AI does not accept any liability for any loss or damage whatsoever caused in reliance upon such information or services.
-            </p>
-            
-            <p>
-              Visitor agrees to indemnify and hold harmless FoodAgri AI from and against any damages, costs and expenses, including any legal fees, potentially resulting from the application of any of the information or services provided by FoodAgri AI. This disclaimer applies to any damages, injury or loss caused by the use and application, whether directly or indirectly, of any advice or information presented, whether for breach of contract, tort, negligence, personal injury, criminal intent or under any other cause of action.
-            </p>
-            
-            <p>
-              Visitor agrees to assume all risk resulting from the application of any of the information, products or services provided by FoodAgri AI.
-            </p>
-            
-            <p>
-              By using this web site, including any applets, software and content contained therein, the visitor agrees that the use of this web site and its information and services is entirely at his/her own risk.
-            </p>
-            
-            <div className="mt-8">
-              <h4 className="text-xl font-bold text-gray-900 mb-4">EARNINGS DISCLAIMER</h4>
-              
+
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">Accuracy, Completeness, and Updates</h4>
               <p>
-                Every effort has been made to accurately represent this product and its potential. Even though this industry is one of the few where one can write their own check in terms of earnings, there is no guarantee that you will earn any money using the techniques and ideas presented here.
+                We strive to ensure that all information, data, and services provided are accurate and up-to-date. However, due to the evolving nature of AI technologies, integrations with third-party services, and the agricultural industry, we do not guarantee the accuracy, completeness, or ongoing validity of any content, AI outputs, or recommendations. Information may be updated, modified, or removed at any time without prior notice.
               </p>
-              
+            </div>
+
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">Third-Party Services and Data Control</h4>
               <p>
-                Examples here are not to be taken as a promise or guarantee of earnings. Earning potential is entirely dependent on the person using our product, ideas, techniques and the effort they put forth.
+                FoodAgri AI integrates with various third-party platforms and service providers to deliver its features. While we select partners with robust security and compliance standards, we do not control the data practices, availability, or accuracy of these external services. Some features, including data export, analytics, or integrations, may be subject to technical or contractual limitations imposed by third-party vendors. We are not liable for any issues, errors, or data unavailability resulting from third-party systems or for any limitations on data access, export, or deletion beyond our direct control.
               </p>
-              
+            </div>
+
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">No Warranties or Guarantees</h4>
               <p>
-                We do not purport this as a "get rich scheme", and nor should you view it as such.
+                All information, services, and AI-generated outputs are provided "as is" and "as available," without warranties of any kind, express or implied. This includes, but is not limited to, implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not guarantee any specific outcomes, results, or earnings from the use of our platform, nor do we represent that our services will be uninterrupted, error-free, or fully secure.
               </p>
-              
+            </div>
+
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">Earnings and Results Disclaimer</h4>
               <p>
-                Your level of success in attaining the results claimed in our materials depends on the time you devote, ideas and techniques mentioned, knowledge and various skills.
+                Any examples, case studies, or forward-looking statements regarding business results, performance, or earnings potential are for illustrative purposes only. Actual results depend on numerous factors, including user effort, market conditions, data quality, and the effective use of our tools. We make no guarantees that users will achieve similar results, and FoodAgri AI does not offer any "get rich quick" opportunities. Success with our platform requires your own diligence, expertise, and ongoing effort.
               </p>
-              
+            </div>
+
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">User Responsibilities and Assumption of Risk</h4>
+              <p className="mb-3">By using our website and services, you acknowledge and agree that:</p>
+              <ul className="list-disc ml-6 space-y-2">
+                <li>You are solely responsible for how you use any information, AI-generated content, or recommendations provided.</li>
+                <li>You will independently verify all outputs before relying on them for business or regulatory decisions.</li>
+                <li>You assume all risks associated with the application of our information, tools, or services, including any loss, damage, or liability that may arise, whether direct or indirect.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">Indemnification and Limitation of Liability</h4>
               <p>
-                Since these factors differ according to individuals, we cannot guarantee your success or income level.
+                You agree to indemnify, defend, and hold harmless FoodAgri AI LLC, its affiliates, officers, employees, and partners from any claims, damages, losses, or expenses (including legal fees) arising from your use or misuse of our website, platform, or services, or from your violation of these terms. To the fullest extent permitted by law, our liability for any claim related to your use of our services is limited as described in our{' '}
+                <button
+                  onClick={() => handlePolicyLinkClick('/terms-of-use')}
+                  className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                >
+                  Terms of Use
+                </button>.
               </p>
-              
+            </div>
+
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">Data Privacy, Security, and User Rights</h4>
               <p>
-                Any and all forward looking statements here or on any of our sales material are intended to express our opinion of earnings potential.
+                We are committed to protecting your privacy and personal data in accordance with applicable laws. Our{' '}
+                <button
+                  onClick={() => handlePolicyLinkClick('/privacy-policy')}
+                  className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                >
+                  Privacy Policy
+                </button>{' '}
+                describes how we collect, use, share, and protect your information, as well as your rights to access, correct, delete, or restrict your data. Some data rights may be limited by technical or contractual constraints with third-party vendors; in such cases, we will communicate transparently and assist you as much as possible. For information about cookies and tracking technologies, see our{' '}
+                <button
+                  onClick={() => handlePolicyLinkClick('/cookie-policy')}
+                  className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                >
+                  Cookie Policy
+                </button>. To exercise your data rights, use our{' '}
+                <button
+                  onClick={() => handlePolicyLinkClick('/data-rights-request')}
+                  className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                >
+                  Data Rights Request Form
+                </button>.
               </p>
-              
+            </div>
+
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">No Professional Advice</h4>
               <p>
-                Many factors will be important in determining your actual results and no guarantees are made that you will achieve results similar to ours or anybody else's, in fact no guarantees are made that you will achieve any results from our ideas, techniques and software.
+                Nothing on this website or in our services constitutes legal, financial, agronomic, or regulatory advice. You should consult with qualified professionals before making decisions based on information or outputs from our platform.
               </p>
-              
+            </div>
+
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">Changes and Updates</h4>
               <p>
-                Results vary, and as with any opportunity, you could make more or less. Success in ANYTHING is a result of hard work, time and a variety of other factors. No express or implied guarantees of income are made by FoodAgri AI.
+                We may update this disclaimer, our{' '}
+                <button
+                  onClick={() => handlePolicyLinkClick('/terms-of-use')}
+                  className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                >
+                  Terms of Use
+                </button>, and our{' '}
+                <button
+                  onClick={() => handlePolicyLinkClick('/privacy-policy')}
+                  className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                >
+                  Privacy Policy
+                </button>{' '}
+                at any time. Continued use of our website or services after such updates constitutes your acceptance of the revised terms.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">Contact</h4>
+              <p className="mb-4">For questions about this disclaimer, our services, or your rights, please contact:</p>
+              <ul className="space-y-2 text-gray-700">
+                <li><strong>Email:</strong> <a href="mailto:privacy@foodagriai.com" className="text-emerald-600 hover:text-emerald-700">privacy@foodagriai.com</a></li>
+                <li><strong>Phone:</strong> <a href="tel:+13075551234" className="text-emerald-600 hover:text-emerald-700">+1 (307) 555-1234</a></li>
+                <li><strong>Mail:</strong> FoodAgri AI LLC, 30 N Gould St Ste R, Sheridan, WY 82801, USA</li>
+              </ul>
+            </div>
+
+            <div>
+              <p>
+                By accessing or using the FoodAgri AI platform, you acknowledge that you have read, understood, and agreed to this disclaimer, our{' '}
+                <button
+                  onClick={() => handlePolicyLinkClick('/terms-of-use')}
+                  className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                >
+                  Terms of Use
+                </button>, {' '}
+                <button
+                  onClick={() => handlePolicyLinkClick('/privacy-policy')}
+                  className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                >
+                  Privacy Policy
+                </button>, and{' '}
+                <button
+                  onClick={() => handlePolicyLinkClick('/cookie-policy')}
+                  className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                >
+                  Cookie Policy
+                </button>. For exercising your data rights, please use our{' '}
+                <button
+                  onClick={() => handlePolicyLinkClick('/data-rights-request')}
+                  className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                >
+                  Data Rights Request Form
+                </button>.
               </p>
             </div>
           </div>
         </div>
-        
+
         <div className="sticky bottom-0 bg-gray-50 border-t border-gray-200 p-6 text-center">
           <button
             onClick={onClose}

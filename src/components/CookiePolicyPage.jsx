@@ -151,12 +151,10 @@ const CookiePolicyPage = () => {
             {/* Cookie Consent */}
             <section>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Cookie Consent and User Choices</h2>
-              
               <div className="space-y-8">
                 {/* Explicit Consent */}
                 <div className="bg-green-50 rounded-2xl p-8 border border-green-200">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">1. Explicit, Granular Consent (GDPR, CCPA, and Global Standards)</h3>
-                  
                   <div className="space-y-4">
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">Consent Banner:</h4>
@@ -169,28 +167,24 @@ const CookiePolicyPage = () => {
                         <li>Customize your preferences by category</li>
                       </ul>
                     </div>
-
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">No Non-Essential Cookies Without Consent:</h4>
                       <p className="text-gray-700 leading-relaxed">
                         Non-essential cookies (analytics, marketing, personalization) are only set if you provide explicit consent. No pre-ticked boxes.
                       </p>
                     </div>
-
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">Persistent Preferences:</h4>
                       <p className="text-gray-700 leading-relaxed">
                         You can change your cookie preferences at any time via the "Manage Cookie Preferences" link in the website footer.
                       </p>
                     </div>
-
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">Withdrawal of Consent:</h4>
                       <p className="text-gray-700 leading-relaxed">
                         Withdrawing consent is as easy as giving it. Changes take effect immediately.
                       </p>
                     </div>
-
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">Region-Specific Compliance:</h4>
                       <ul className="space-y-2 text-gray-700 list-disc ml-6">
@@ -237,14 +231,12 @@ const CookiePolicyPage = () => {
                       Use the "Manage Cookie Preferences" link on our site to update your choices at any time.
                     </p>
                   </div>
-
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">Via Browser Settings:</h4>
                     <p className="text-gray-700 leading-relaxed">
                       Most browsers allow you to block or delete cookies. Refer to your browser's help section for instructions. Note: Blocking cookies may affect site functionality.
                     </p>
                   </div>
-
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">Analytics Opt-Out:</h4>
                     <p className="text-gray-700 leading-relaxed">
@@ -328,10 +320,24 @@ const CookiePolicyPage = () => {
                 <p className="text-gray-700 leading-relaxed mb-6">
                   For questions about this Cookie Policy or your privacy rights, contact:
                 </p>
-                <div className="space-y-2 text-gray-700">
+                <div className="space-y-2 text-gray-700 mb-6">
                   <p><strong>Email:</strong> <a href="mailto:privacy@foodagriai.com" className="text-emerald-600 hover:text-emerald-700">privacy@foodagriai.com</a></p>
                   <p><strong>Phone:</strong> <a href="tel:+13075551234" className="text-emerald-600 hover:text-emerald-700">+1 (307) 555-1234</a></p>
                   <p><strong>Mail:</strong> FoodAgri AI LLC, 30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
+                </div>
+                <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                  <button
+                    onClick={() => navigate('/data-rights-request')}
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  >
+                    Submit Data Rights Request
+                  </button>
+                  <button
+                    onClick={() => navigate('/privacy-policy')}
+                    className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors"
+                  >
+                    View Privacy Policy
+                  </button>
                 </div>
               </div>
             </section>
