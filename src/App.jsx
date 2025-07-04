@@ -10,6 +10,7 @@ import CustomerExperiencePage from './components/CustomerExperiencePage';
 import OnboardingTrainingPage from './components/OnboardingTrainingPage';
 import PartnershipChannelPage from './components/PartnershipChannelPage';
 import DataIntelligencePage from './components/DataIntelligencePage';
+import CustomerOnboardingPage from './components/CustomerOnboardingPage';
 import TermsOfUsePage from './components/TermsOfUsePage';
 import DataHandlingPage from './components/DataHandlingPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
@@ -32,6 +33,7 @@ function App() {
           <Route path="/onboarding-training-bundle" element={<OnboardingTrainingPage />} />
           <Route path="/partnership-channel-bundle" element={<PartnershipChannelPage />} />
           <Route path="/data-intelligence-bundle" element={<DataIntelligencePage />} />
+          <Route path="/customer-onboarding" element={<CustomerOnboardingPage />} />
           <Route path="/terms-of-use" element={<TermsOfUsePage />} />
           <Route path="/data-handling-deletion-schedule" element={<DataHandlingPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />

@@ -9,11 +9,7 @@ import SchedulingModal from './modals/SchedulingModal';
 import DemoFormModal from './modals/DemoFormModal';
 import useModal from '../hooks/useModal';
 
-const { 
-  FiArrowLeft, FiTrendingUp, FiTarget, FiZap, FiUsers, FiBarChart3, 
-  FiSettings, FiCheck, FiArrowRight, FiCpu, FiDatabase, FiMessageCircle,
-  FiFileText, FiEye, FiRefreshCw
-} = FiIcons;
+const { FiArrowLeft, FiTrendingUp, FiTarget, FiZap, FiUsers, FiBarChart3, FiSettings, FiCheck, FiArrowRight, FiCpu, FiDatabase, FiMessageCircle, FiFileText, FiEye, FiRefreshCw } = FiIcons;
 
 const GrowthAcceleratorPage = () => {
   const navigate = useNavigate();
@@ -117,38 +113,14 @@ const GrowthAcceleratorPage = () => {
   ];
 
   const featuresTable = [
-    {
-      feature: "AI Market & ICP Research",
-      delivers: "Real-time, data-driven targeting and positioning"
-    },
-    {
-      feature: "Automated Lead Generation",
-      delivers: "10x qualified leads, predictive scoring, CRM-ready"
-    },
-    {
-      feature: "Hyper-Personalized Outreach",
-      delivers: "Dynamic, multi-channel messaging that adapts"
-    },
-    {
-      feature: "Dynamic Content Creation",
-      delivers: "Blogs, posts, and campaigns tailored to each buyer"
-    },
-    {
-      feature: "Campaign Automation & Optimization",
-      delivers: "Scheduling, A/B testing, and cross-channel delivery"
-    },
-    {
-      feature: "AI Analytics & Reporting",
-      delivers: "Real-time dashboards, predictive insights"
-    },
-    {
-      feature: "Workflow Automation",
-      delivers: "End-to-end process automation for scale"
-    },
-    {
-      feature: "Dedicated Support & Optimization",
-      delivers: "Ongoing strategy reviews and hands-on support"
-    }
+    { feature: "AI Market & ICP Research", delivers: "Real-time, data-driven targeting and positioning" },
+    { feature: "Automated Lead Generation", delivers: "10x qualified leads, predictive scoring, CRM-ready" },
+    { feature: "Hyper-Personalized Outreach", delivers: "Dynamic, multi-channel messaging that adapts" },
+    { feature: "Dynamic Content Creation", delivers: "Blogs, posts, and campaigns tailored to each buyer" },
+    { feature: "Campaign Automation & Optimization", delivers: "Scheduling, A/B testing, and cross-channel delivery" },
+    { feature: "AI Analytics & Reporting", delivers: "Real-time dashboards, predictive insights" },
+    { feature: "Workflow Automation", delivers: "End-to-end process automation for scale" },
+    { feature: "Dedicated Support & Optimization", delivers: "Ongoing strategy reviews and hands-on support" }
   ];
 
   const whyChooseReasons = [
@@ -162,7 +134,7 @@ const GrowthAcceleratorPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-emerald-50 via-green-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -173,7 +145,7 @@ const GrowthAcceleratorPage = () => {
             <SafeIcon icon={FiArrowLeft} className="w-5 h-5" />
             <span>Back to Home</span>
           </button>
-          
+
           <div className="text-center max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -190,10 +162,8 @@ const GrowthAcceleratorPage = () => {
                 Full-Funnel Market Expansion Engine for Food & Agri Businesses
               </h2>
               <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
-                Rapidly fill your pipeline, dominate new markets, and drive predictable growth with minimal manual effort. 
-                Perfect for: Food/agri manufacturers, processors, distributors, and B2B brands.
+                Rapidly fill your pipeline, dominate new markets, and drive predictable growth with minimal manual effort. Perfect for: Food/agri manufacturers, processors, distributors, and B2B brands.
               </p>
-              
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8">
                 <button
                   onClick={schedulingModal.openModal}
@@ -210,13 +180,12 @@ const GrowthAcceleratorPage = () => {
                   <span>See It In Action</span>
                 </button>
                 <button
-                  onClick={schedulingModal.openModal}
+                  onClick={() => navigate('/customer-onboarding')}
                   className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors underline"
                 >
                   Get Started Now
                 </button>
               </div>
-
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-emerald-100">
                 <p className="text-gray-700 font-medium">
                   Transform your food business with intelligent automation that works 24/7 to fuel your growth
@@ -442,7 +411,7 @@ const GrowthAcceleratorPage = () => {
                   Instantly boost your lead flow, automate your outreach, and scale your content—no manual prospecting required.
                 </p>
                 <button
-                  onClick={schedulingModal.openModal}
+                  onClick={() => navigate('/customer-onboarding')}
                   className="bg-emerald-500 hover:bg-emerald-400 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   Get Started Now
@@ -465,8 +434,7 @@ const GrowthAcceleratorPage = () => {
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-4xl mx-auto">
               <p className="text-lg opacity-90 italic">
-                All solutions are modular and integrate with your existing tech stack. Upgrade or add bundles as your business grows. 
-                Experience the power of always-on, AI-driven market expansion—purpose-built for the food and agri sector.
+                All solutions are modular and integrate with your existing tech stack. Upgrade or add bundles as your business grows. Experience the power of always-on, AI-driven market expansion—purpose-built for the food and agri sector.
               </p>
             </div>
           </motion.div>

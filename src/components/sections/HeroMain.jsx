@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
 import VideoModal from '../VideoModal';
@@ -9,6 +10,7 @@ import useModal from '../../hooks/useModal';
 const { FiPlay, FiArrowRight } = FiIcons;
 
 const HeroMain = () => {
+  const navigate = useNavigate();
   const videoModal = useModal();
   const demoModal = useModal();
 
@@ -45,6 +47,7 @@ const HeroMain = () => {
               <span className="text-blue-400">AI</span>
             </span>-Powered Growth
           </h1>
+
           <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
             Stop losing sales to manual processes. <span className="text-emerald-400">FoodAgri</span>{' '}
             <span className="text-blue-400">AI</span> automates your lead generation, fills your pipeline, and scales your revenue—specifically designed for food and agriculture businesses.
@@ -83,8 +86,9 @@ const HeroMain = () => {
               </div>
               <span>Watch in Action</span>
             </button>
+
             <button
-              onClick={demoModal.openModal}
+              onClick={() => navigate('/customer-onboarding')}
               className="group bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
             >
               <span>Let's Grow Your Business</span>

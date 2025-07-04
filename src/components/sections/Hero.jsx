@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
 import DemoFormModal from '../modals/DemoFormModal';
@@ -8,6 +9,7 @@ import useModal from '../../hooks/useModal';
 const { FiArrowRight, FiTrendingUp, FiUsers, FiShield, FiBarChart3, FiHeadphones, FiTarget } = FiIcons;
 
 const Hero = () => {
+  const navigate = useNavigate();
   const demoModal = useModal();
 
   return (
@@ -55,7 +57,8 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-700 mb-12 max-w-5xl mx-auto leading-relaxed"
           >
-            For food and agriculture businesses overwhelmed by inefficient sales processes, compliance headaches, and slow growth, <span className="text-emerald-600">FoodAgri</span>{' '}
+            For food and agriculture businesses overwhelmed by inefficient sales processes, compliance headaches, and slow growth,
+            <span className="text-emerald-600">FoodAgri</span>{' '}
             <span className="text-blue-600">AI</span> automates your lead generation, fills your pipeline, and keeps you audit-ready—without the tech headaches or generic tools that never fit your needs.
           </motion.p>
 
@@ -105,7 +108,10 @@ const Hero = () => {
                       <SafeIcon icon={item.icon} className="w-6 h-6 text-emerald-600" />
                     </div>
                   </div>
-                  <p className="text-gray-700 text-left leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }}></p>
+                  <p
+                    className="text-gray-700 text-left leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: item.text }}
+                  ></p>
                 </div>
               </motion.div>
             ))}
@@ -119,10 +125,10 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
           >
             <button
-              onClick={demoModal.openModal}
+              onClick={() => navigate('/customer-onboarding')}
               className="group bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
             >
-              <span>Reclaim Your Time & Boost Your Margins</span>
+              <span>Let's Grow Your Business</span>
               <SafeIcon icon={FiArrowRight} className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <p className="text-sm text-gray-600">No credit card required • Free consultation • Setup in minutes</p>

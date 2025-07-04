@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
 import DemoFormModal from '../modals/DemoFormModal';
@@ -8,6 +9,7 @@ import useModal from '../../hooks/useModal';
 const { FiDatabase, FiZap, FiTrendingUp, FiArrowRight } = FiIcons;
 
 const ProductIntro = () => {
+  const navigate = useNavigate();
   const demoModal = useModal();
 
   const steps = [
@@ -127,10 +129,10 @@ const ProductIntro = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-6">
             <button
-              onClick={demoModal.openModal}
+              onClick={() => navigate('/customer-onboarding')}
               className="group bg-white text-emerald-600 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
             >
-              <span>Get Your Free Demo Now</span>
+              <span>Let's Grow Your Business</span>
               <SafeIcon icon={FiArrowRight} className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>

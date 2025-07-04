@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
@@ -6,6 +6,36 @@ import SafeIcon from '../../common/SafeIcon';
 const { FiX } = FiIcons;
 
 const SchedulingModal = ({ isOpen, onClose }) => {
+  const calendarRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen && calendarRef.current) {
+      // Clear existing content
+      calendarRef.current.innerHTML = '';
+      
+      // Insert the exact HTML from your calendar code
+      calendarRef.current.innerHTML = `
+        <div class="imeetify-full-calendar" height="570" width="1000" url="https://meet.vitalykirkpatrick.com/vitaly/60-min-Virtual-Collab" title="Full Calendar"></div>
+      `;
+
+      // Load the script
+      const script = document.createElement('script');
+      script.src = 'https://imeetify.com/assets/care_panel/js/embed/widget.js';
+      script.type = 'text/javascript';
+      script.async = true;
+      
+      document.head.appendChild(script);
+
+      return () => {
+        // Cleanup
+        const existingScript = document.querySelector('script[src="https://imeetify.com/assets/care_panel/js/embed/widget.js"]');
+        if (existingScript) {
+          existingScript.remove();
+        }
+      };
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
@@ -14,7 +44,7 @@ const SchedulingModal = ({ isOpen, onClose }) => {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="bg-white rounded-2xl max-w-4xl w-full p-8 relative max-h-[90vh] overflow-y-auto"
+        className="bg-white rounded-2xl max-w-6xl w-full p-6 relative max-h-[90vh] overflow-hidden"
       >
         <button
           onClick={onClose}
@@ -28,19 +58,12 @@ const SchedulingModal = ({ isOpen, onClose }) => {
           <p className="text-gray-600">Choose a convenient time for your personalized strategy session</p>
         </div>
 
-        {/* Embed your scheduling widget here */}
-        <div className="bg-gray-50 rounded-xl p-6">
-          <div className="bg-white p-8 rounded-lg border-2 border-dashed border-gray-300 text-center">
-            <p className="text-gray-700 mb-4">Replace this section with your Calendly or iMeetify embed code</p>
-            <code className="text-sm text-gray-600">
-              {`<!-- Calendly embed code -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/your-username" style="min-width:320px;height:630px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-<!-- OR iMeetify embed code -->
-<iframe src="https://imeetify.com/your-booking-page" width="100%" height="600"></iframe>`}
-            </code>
-          </div>
+        {/* iMeetify Calendar Container */}
+        <div className="w-full h-[570px] overflow-hidden rounded-xl border border-gray-200">
+          <div 
+            ref={calendarRef}
+            style={{ height: '570px', width: '100%' }}
+          ></div>
         </div>
 
         <div className="mt-6 text-center">
