@@ -5,6 +5,8 @@ import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 import Navigation from './Navigation';
 import Footer from './sections/Footer';
+import SEOHead from './SEO/SEOHead';
+import StructuredData from './SEO/StructuredData';
 
 const { FiArrowLeft, FiUser, FiMail, FiPhone, FiBriefcase, FiMapPin, FiDollarSign, FiUsers, FiTarget, FiTrendingUp, FiSettings, FiShield, FiCheck, FiUpload } = FiIcons;
 
@@ -12,7 +14,6 @@ const CustomerOnboardingPage = () => {
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
   const [formData, setFormData] = useState({
     // Company Information
     companyName: '',
@@ -21,7 +22,6 @@ const CustomerOnboardingPage = () => {
     annualRevenue: '',
     website: '',
     yearEstablished: '',
-    
     // Contact Information
     contactName: '',
     title: '',
@@ -32,7 +32,6 @@ const CustomerOnboardingPage = () => {
     state: '',
     zipCode: '',
     country: '',
-    
     // Business Operations
     businessType: '',
     primaryProducts: '',
@@ -40,7 +39,6 @@ const CustomerOnboardingPage = () => {
     salesChannels: [],
     geographicMarkets: '',
     seasonality: '',
-    
     // Current Challenges
     primaryChallenges: [],
     currentLeadGenSources: [],
@@ -48,25 +46,21 @@ const CustomerOnboardingPage = () => {
     conversionRate: '',
     averageDealSize: '',
     salesCycleLength: '',
-    
     // Technology Stack
     currentCRM: '',
     marketingTools: [],
     salesTools: [],
     techStack: '',
     integrationNeeds: '',
-    
     // Goals & Objectives
     primaryGoals: [],
     timeframe: '',
     budgetRange: '',
     successMetrics: '',
-    
     // Team Information
     salesTeamSize: '',
     marketingTeamSize: '',
     decisionMakers: '',
-    
     // Additional Information
     additionalInfo: '',
     documents: null
@@ -74,58 +68,148 @@ const CustomerOnboardingPage = () => {
 
   const totalSteps = 6;
 
+  const seoData = {
+    title: "Get Started with FoodAgri AI - Customer Onboarding for Food & Agriculture Businesses",
+    description: "Start your AI transformation journey with FoodAgri AI. Complete our comprehensive onboarding form to receive a custom AI solution tailored for your food or agriculture business. Free consultation and demo included.",
+    keywords: "FoodAgri AI onboarding, food business AI setup, agriculture AI consultation, AI transformation food industry, sales automation onboarding, food tech implementation, agriculture AI solutions setup",
+    canonical: "https://foodagriai.com/customer-onboarding",
+    image: "https://foodagriai.com/og-image-onboarding.jpg"
+  };
+
+  const structuredDataOnboarding = {
+    "@type": "WebPage",
+    "name": "Customer Onboarding - FoodAgri AI",
+    "description": "Complete onboarding process for FoodAgri AI's food and agriculture AI solutions",
+    "url": "https://foodagriai.com/customer-onboarding",
+    "mainEntity": {
+      "@type": "Service",
+      "name": "FoodAgri AI Onboarding Process",
+      "description": "Comprehensive 6-step onboarding to customize AI solutions for food and agriculture businesses",
+      "provider": {
+        "@type": "Organization",
+        "name": "FoodAgri AI LLC"
+      }
+    }
+  };
+
   const industryOptions = [
-    'Food Manufacturing', 'Food Processing', 'Agriculture', 'Dairy Products',
-    'Meat & Poultry', 'Seafood', 'Beverages', 'Bakery & Confectionery',
-    'Frozen Foods', 'Organic Foods', 'Pet Food', 'Food Distribution',
-    'Restaurant/Foodservice', 'Food Packaging', 'Agricultural Equipment',
-    'Food Technology', 'Other'
+    'Food Manufacturing',
+    'Food Processing',
+    'Agriculture',
+    'Dairy Products',
+    'Meat & Poultry',
+    'Seafood',
+    'Beverages',
+    'Bakery & Confectionery',
+    'Frozen Foods',
+    'Organic Foods',
+    'Pet Food',
+    'Food Distribution',
+    'Restaurant/Foodservice',
+    'Food Packaging',
+    'Agricultural Equipment',
+    'Food Technology',
+    'Other'
   ];
 
   const companySizeOptions = [
-    '1-10 employees', '11-50 employees', '51-200 employees', 
-    '201-500 employees', '501-1000 employees', '1000+ employees'
+    '1-10 employees',
+    '11-50 employees',
+    '51-200 employees',
+    '201-500 employees',
+    '501-1000 employees',
+    '1000+ employees'
   ];
 
   const revenueOptions = [
-    'Under $1M', '$1M - $5M', '$5M - $25M', '$25M - $100M', '$100M - $500M', '$500M+'
+    'Under $1M',
+    '$1M - $5M',
+    '$5M - $25M',
+    '$25M - $100M',
+    '$100M - $500M',
+    '$500M+'
   ];
 
   const businessTypeOptions = [
-    'B2B Only', 'B2C Only', 'Both B2B and B2C', 'B2B2C'
+    'B2B Only',
+    'B2C Only',
+    'Both B2B and B2C',
+    'B2B2C'
   ];
 
   const salesChannelsOptions = [
-    'Direct Sales', 'Distributors', 'Retailers', 'Online/E-commerce', 
-    'Food Service', 'Export/International', 'Private Label'
+    'Direct Sales',
+    'Distributors',
+    'Retailers',
+    'Online/E-commerce',
+    'Food Service',
+    'Export/International',
+    'Private Label'
   ];
 
   const challengesOptions = [
-    'Lead Generation', 'Sales Process Efficiency', 'Marketing Automation',
-    'Customer Support', 'Data Management', 'Team Training', 'Market Expansion', 
-    'Customer Retention', 'Pricing Strategy', 'Inventory Management', 'Quality Control'
+    'Lead Generation',
+    'Sales Process Efficiency',
+    'Marketing Automation',
+    'Customer Support',
+    'Data Management',
+    'Team Training',
+    'Market Expansion',
+    'Customer Retention',
+    'Pricing Strategy',
+    'Inventory Management',
+    'Quality Control'
   ];
 
   const leadSourcesOptions = [
-    'Cold Calling', 'Email Marketing', 'Social Media', 'Trade Shows',
-    'Referrals', 'Website', 'Content Marketing', 'Paid Advertising',
-    'Networking Events', 'Industry Publications'
+    'Cold Calling',
+    'Email Marketing',
+    'Social Media',
+    'Trade Shows',
+    'Referrals',
+    'Website',
+    'Content Marketing',
+    'Paid Advertising',
+    'Networking Events',
+    'Industry Publications'
   ];
 
   const marketingToolsOptions = [
-    'HubSpot', 'Mailchimp', 'Constant Contact', 'Salesforce Marketing Cloud',
-    'Marketo', 'Pardot', 'ActiveCampaign', 'ConvertKit', 'None', 'Other'
+    'HubSpot',
+    'Mailchimp',
+    'Constant Contact',
+    'Salesforce Marketing Cloud',
+    'Marketo',
+    'Pardot',
+    'ActiveCampaign',
+    'ConvertKit',
+    'None',
+    'Other'
   ];
 
   const salesToolsOptions = [
-    'Salesforce', 'HubSpot CRM', 'Pipedrive', 'Zoho CRM', 'Monday.com',
-    'Copper', 'Freshsales', 'Microsoft Dynamics', 'None', 'Other'
+    'Salesforce',
+    'HubSpot CRM',
+    'Pipedrive',
+    'Zoho CRM',
+    'Monday.com',
+    'Copper',
+    'Freshsales',
+    'Microsoft Dynamics',
+    'None',
+    'Other'
   ];
 
   const goalsOptions = [
-    'Increase Lead Generation', 'Improve Sales Conversion', 'Automate Marketing',
-    'Enhance Customer Support', 'Streamline Operations', 'Expand Market Reach', 
-    'Reduce Manual Tasks', 'Improve Data Analytics', 'Scale Team Productivity'
+    'Increase Lead Generation',
+    'Improve Sales Conversion',
+    'Automate Marketing',
+    'Enhance Customer Support',
+    'Streamline Operations',
+    'Expand Market Reach',
+    'Reduce Manual Tasks',
+    'Improve Data Analytics',
+    'Scale Team Productivity'
   ];
 
   const handleInputChange = (e) => {
@@ -134,7 +218,7 @@ const CustomerOnboardingPage = () => {
     if (type === 'checkbox') {
       setFormData(prev => ({
         ...prev,
-        [name]: checked 
+        [name]: checked
           ? [...(prev[name] || []), value]
           : (prev[name] || []).filter(item => item !== value)
       }));
@@ -175,7 +259,7 @@ const CustomerOnboardingPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       // Simulate form submission
       console.log('Customer Onboarding Data:', formData);
@@ -185,17 +269,49 @@ const CustomerOnboardingPage = () => {
       
       // Reset form
       setFormData({
-        companyName: '', industry: '', companySize: '', annualRevenue: '', website: '', yearEstablished: '',
-        contactName: '', title: '', email: '', phone: '', address: '', city: '', state: '', zipCode: '', country: '',
-        businessType: '', primaryProducts: '', targetMarkets: '', salesChannels: [], geographicMarkets: '', seasonality: '',
-        primaryChallenges: [], currentLeadGenSources: [], monthlyLeadVolume: '', conversionRate: '', averageDealSize: '', salesCycleLength: '',
-        currentCRM: '', marketingTools: [], salesTools: [], techStack: '', integrationNeeds: '',
-        primaryGoals: [], timeframe: '', budgetRange: '', successMetrics: '',
-        salesTeamSize: '', marketingTeamSize: '', decisionMakers: '',
-        additionalInfo: '', documents: null
+        companyName: '',
+        industry: '',
+        companySize: '',
+        annualRevenue: '',
+        website: '',
+        yearEstablished: '',
+        contactName: '',
+        title: '',
+        email: '',
+        phone: '',
+        address: '',
+        city: '',
+        state: '',
+        zipCode: '',
+        country: '',
+        businessType: '',
+        primaryProducts: '',
+        targetMarkets: '',
+        salesChannels: [],
+        geographicMarkets: '',
+        seasonality: '',
+        primaryChallenges: [],
+        currentLeadGenSources: [],
+        monthlyLeadVolume: '',
+        conversionRate: '',
+        averageDealSize: '',
+        salesCycleLength: '',
+        currentCRM: '',
+        marketingTools: [],
+        salesTools: [],
+        techStack: '',
+        integrationNeeds: '',
+        primaryGoals: [],
+        timeframe: '',
+        budgetRange: '',
+        successMetrics: '',
+        salesTeamSize: '',
+        marketingTeamSize: '',
+        decisionMakers: '',
+        additionalInfo: '',
+        documents: null
       });
       setCurrentStep(1);
-      
     } catch (error) {
       alert('Sorry, there was an error submitting your information. Please try again or contact us directly.');
     } finally {
@@ -223,7 +339,6 @@ const CustomerOnboardingPage = () => {
         return (
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Company Information</h3>
-            
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -257,7 +372,7 @@ const CustomerOnboardingPage = () => {
                   ))}
                 </select>
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Company Size <span className="text-red-500">*</span>
@@ -275,7 +390,7 @@ const CustomerOnboardingPage = () => {
                   ))}
                 </select>
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Annual Revenue <span className="text-red-500">*</span>
@@ -293,7 +408,7 @@ const CustomerOnboardingPage = () => {
                   ))}
                 </select>
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Website</label>
                 <input
@@ -305,7 +420,7 @@ const CustomerOnboardingPage = () => {
                   placeholder="https://yourcompany.com"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Year Established</label>
                 <input
@@ -322,12 +437,11 @@ const CustomerOnboardingPage = () => {
             </div>
           </div>
         );
-      
+
       case 2:
         return (
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
-            
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -343,7 +457,7 @@ const CustomerOnboardingPage = () => {
                   placeholder="Your full name"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Title/Position <span className="text-red-500">*</span>
@@ -358,7 +472,7 @@ const CustomerOnboardingPage = () => {
                   placeholder="CEO, Sales Director, etc."
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Email Address <span className="text-red-500">*</span>
@@ -373,7 +487,7 @@ const CustomerOnboardingPage = () => {
                   placeholder="your@email.com"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Phone Number <span className="text-red-500">*</span>
@@ -388,7 +502,7 @@ const CustomerOnboardingPage = () => {
                   placeholder="(555) 123-4567"
                 />
               </div>
-              
+
               <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-2">Business Address</label>
                 <input
@@ -400,7 +514,7 @@ const CustomerOnboardingPage = () => {
                   placeholder="Street address"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">City</label>
                 <input
@@ -412,7 +526,7 @@ const CustomerOnboardingPage = () => {
                   placeholder="City"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">State/Province</label>
                 <input
@@ -424,7 +538,7 @@ const CustomerOnboardingPage = () => {
                   placeholder="State/Province"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">ZIP/Postal Code</label>
                 <input
@@ -436,7 +550,7 @@ const CustomerOnboardingPage = () => {
                   placeholder="ZIP Code"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Country</label>
                 <input
@@ -451,7 +565,7 @@ const CustomerOnboardingPage = () => {
             </div>
           </div>
         );
-      
+
       case 3:
         return (
           <div className="space-y-6">
@@ -474,7 +588,7 @@ const CustomerOnboardingPage = () => {
                 ))}
               </select>
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Primary Products/Services <span className="text-red-500">*</span>
@@ -489,7 +603,7 @@ const CustomerOnboardingPage = () => {
                 placeholder="Describe your main products or services..."
               />
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Target Markets/Customer Types <span className="text-red-500">*</span>
@@ -504,7 +618,7 @@ const CustomerOnboardingPage = () => {
                 placeholder="Describe your target customers (restaurants, retailers, manufacturers, etc.)"
               />
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-3">
                 Sales Channels <span className="text-red-500">*</span> (Select all that apply)
@@ -525,7 +639,7 @@ const CustomerOnboardingPage = () => {
                 ))}
               </div>
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Geographic Markets</label>
               <textarea
@@ -537,7 +651,7 @@ const CustomerOnboardingPage = () => {
                 placeholder="Local, Regional, National, International markets you serve"
               />
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Seasonality Factors</label>
               <textarea
@@ -551,7 +665,7 @@ const CustomerOnboardingPage = () => {
             </div>
           </div>
         );
-      
+
       case 4:
         return (
           <div className="space-y-6">
@@ -577,7 +691,7 @@ const CustomerOnboardingPage = () => {
                 ))}
               </div>
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-3">Current Lead Generation Sources (Select all that apply)</label>
               <div className="grid md:grid-cols-2 gap-3">
@@ -596,7 +710,7 @@ const CustomerOnboardingPage = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Monthly Lead Volume</label>
@@ -614,7 +728,7 @@ const CustomerOnboardingPage = () => {
                   <option value="500+">500+ leads</option>
                 </select>
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Lead to Customer Conversion Rate</label>
                 <select
@@ -631,7 +745,7 @@ const CustomerOnboardingPage = () => {
                   <option value=">30%">More than 30%</option>
                 </select>
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Average Deal Size</label>
                 <select
@@ -648,7 +762,7 @@ const CustomerOnboardingPage = () => {
                   <option value=">$500K">More than $500K</option>
                 </select>
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Average Sales Cycle Length</label>
                 <select
@@ -678,7 +792,7 @@ const CustomerOnboardingPage = () => {
                 placeholder="Salesforce, HubSpot, None, etc."
               />
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-3">Current Marketing Tools (Select all that apply)</label>
               <div className="grid md:grid-cols-2 gap-3">
@@ -697,7 +811,7 @@ const CustomerOnboardingPage = () => {
                 ))}
               </div>
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-3">Current Sales Tools (Select all that apply)</label>
               <div className="grid md:grid-cols-2 gap-3">
@@ -716,7 +830,7 @@ const CustomerOnboardingPage = () => {
                 ))}
               </div>
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Other Technology Stack</label>
               <textarea
@@ -728,7 +842,7 @@ const CustomerOnboardingPage = () => {
                 placeholder="List other important software, systems, or tools your business uses"
               />
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Integration Needs</label>
               <textarea
@@ -742,7 +856,7 @@ const CustomerOnboardingPage = () => {
             </div>
           </div>
         );
-      
+
       case 5:
         return (
           <div className="space-y-6">
@@ -768,7 +882,7 @@ const CustomerOnboardingPage = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -789,7 +903,7 @@ const CustomerOnboardingPage = () => {
                   <option value="Planning phase">Still in planning phase</option>
                 </select>
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Budget Range <span className="text-red-500">*</span>
@@ -811,7 +925,7 @@ const CustomerOnboardingPage = () => {
                 </select>
               </div>
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Success Metrics</label>
               <textarea
@@ -823,7 +937,7 @@ const CustomerOnboardingPage = () => {
                 placeholder="How will you measure success? What KPIs are most important?"
               />
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Sales Team Size</label>
@@ -841,7 +955,7 @@ const CustomerOnboardingPage = () => {
                   <option value="10+">10+ people</option>
                 </select>
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Marketing Team Size</label>
                 <select
@@ -858,7 +972,7 @@ const CustomerOnboardingPage = () => {
                   <option value="10+">10+ people</option>
                 </select>
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Key Decision Makers</label>
                 <input
@@ -873,7 +987,7 @@ const CustomerOnboardingPage = () => {
             </div>
           </div>
         );
-      
+
       case 6:
         return (
           <div className="space-y-6">
@@ -890,7 +1004,7 @@ const CustomerOnboardingPage = () => {
                 placeholder="Please share any additional information about your business, specific challenges, or requirements that would help us better understand your needs and create the perfect AI solution for you."
               />
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Upload Supporting Documents (Optional)</label>
               <div className="border-2 border-dashed border-emerald-300 rounded-xl p-6 text-center hover:border-emerald-400 transition-colors">
@@ -923,7 +1037,7 @@ const CustomerOnboardingPage = () => {
             </div>
           </div>
         );
-      
+
       default:
         return null;
     }
@@ -931,8 +1045,11 @@ const CustomerOnboardingPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
+      <SEOHead {...seoData} />
+      <StructuredData type="website" data={structuredDataOnboarding} />
       
+      <Navigation />
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-emerald-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -943,18 +1060,20 @@ const CustomerOnboardingPage = () => {
             <SafeIcon icon={FiArrowLeft} className="w-5 h-5" />
             <span>Back to Home</span>
           </button>
-          
+
           <div className="text-center max-w-4xl mx-auto">
             <div className="w-20 h-20 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <SafeIcon icon={FiBriefcase} className="w-10 h-10 text-emerald-600" />
             </div>
+            
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Let's Grow Your Business Together
             </h1>
+            
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
               Tell us about your business so we can create a custom AI solution that drives real results for your food or agriculture company.
             </p>
-            
+
             {/* Progress Bar */}
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-emerald-100 mb-8">
               <div className="flex items-center justify-between mb-4">
@@ -964,7 +1083,7 @@ const CustomerOnboardingPage = () => {
                 </span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-3">
-                <div
+                <div 
                   className="bg-gradient-to-r from-emerald-600 to-blue-600 h-3 rounded-full transition-all duration-300"
                   style={{ width: `${(currentStep / totalSteps) * 100}%` }}
                 ></div>

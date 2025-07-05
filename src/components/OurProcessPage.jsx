@@ -5,8 +5,8 @@ import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 import Navigation from './Navigation';
 import Footer from './sections/Footer';
-import WhyDifferent from './sections/WhyDifferent';
 import ProductIntro from './sections/ProductIntro';
+import WhyDifferent from './sections/WhyDifferent';
 import SchedulingModal from './modals/SchedulingModal';
 import DemoFormModal from './modals/DemoFormModal';
 import useModal from '../hooks/useModal';
@@ -22,16 +22,39 @@ const OurProcessPage = () => {
 
   const seoData = {
     title: "Our Process - How FoodAgri AI Transforms Food & Agriculture Businesses",
-    description: "Learn about FoodAgri AI's proven process for transforming food and agriculture businesses with AI-powered solutions. Discover what makes us different and how we deliver results.",
-    keywords: "FoodAgri AI process, food industry AI implementation, agriculture automation process, AI transformation methodology",
-    canonical: "https://foodagriai.com/our-process"
+    description: "Learn about FoodAgri AI's proven 3-step process for transforming food and agriculture businesses with AI-powered solutions. Discover what makes us different from generic sales tools and how we deliver measurable results for food manufacturers, processors, and distributors.",
+    keywords: "FoodAgri AI process, food industry AI implementation, agriculture automation process, AI transformation methodology, food industry sales automation, agriculture AI solutions, food tech implementation, agritech process",
+    canonical: "https://foodagriai.com/our-process",
+    image: "https://foodagriai.com/og-image-process.jpg"
   };
 
   const structuredDataPage = {
     "@type": "WebPage",
     "name": "Our Process - FoodAgri AI",
-    "description": "Learn about FoodAgri AI's proven process for transforming food and agriculture businesses",
-    "url": "https://foodagriai.com/our-process"
+    "description": "Learn about FoodAgri AI's proven process for transforming food and agriculture businesses with AI-powered solutions",
+    "url": "https://foodagriai.com/our-process",
+    "mainEntity": {
+      "@type": "HowTo",
+      "name": "FoodAgri AI Implementation Process",
+      "description": "3-step process to transform your food business with AI",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Connect Your Data",
+          "text": "Connect your data and workflows with plug-and-play setup"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "Let AI Automate",
+          "text": "FoodAgri AI automates lead generation, content, compliance, and support"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Watch Your Business Grow",
+          "text": "Scale with confidence while focusing on what matters most"
+        }
+      ]
+    }
   };
 
   return (
@@ -69,11 +92,11 @@ const OurProcessPage = () => {
         </div>
       </section>
 
-      {/* Why Different Section */}
-      <WhyDifferent />
-
-      {/* Product Intro / Process Section */}
+      {/* Product Intro / Process Section - FIRST */}
       <ProductIntro />
+
+      {/* Why Different Section - SECOND (after process explanation) */}
+      <WhyDifferent />
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-emerald-600 to-blue-600">

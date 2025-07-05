@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import * as FiIcons from 'react-icons/fi';
@@ -105,15 +105,18 @@ const BlogPage = () => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    
     const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
+    
     return matchesSearch && matchesCategory;
   });
 
   const seoData = {
-    title: "FoodAgri AI Blog - AI Insights for Food & Agriculture Industry",
-    description: "Stay updated with the latest insights, trends, and best practices in AI-powered solutions for food and agriculture businesses. Expert articles on sales automation, lead generation, and industry innovations.",
-    keywords: "food industry blog, agriculture AI insights, sales automation articles, food tech blog, agritech content, AI marketing tips",
-    canonical: "https://foodagriai.com/blog"
+    title: "FoodAgri AI Blog - AI Insights & Trends for Food & Agriculture Industry",
+    description: "Stay updated with the latest insights, trends, and best practices in AI-powered solutions for food and agriculture businesses. Expert articles on sales automation, lead generation, compliance, and industry innovations from FoodAgri AI.",
+    keywords: "food industry blog, agriculture AI insights, sales automation articles, food tech blog, agritech content, AI marketing tips, food industry trends, agriculture technology news, food safety compliance, sales optimization",
+    canonical: "https://foodagriai.com/blog",
+    image: "https://foodagriai.com/og-image-blog.jpg"
   };
 
   const structuredDataBlog = {
@@ -124,7 +127,20 @@ const BlogPage = () => {
     "publisher": {
       "@type": "Organization",
       "name": "FoodAgri AI LLC"
-    }
+    },
+    "blogPost": blogPosts.map(post => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "url": `https://foodagriai.com/blog/${post.id}`,
+      "datePublished": post.date,
+      "author": {
+        "@type": "Person",
+        "name": post.author
+      },
+      "image": post.image,
+      "keywords": post.tags.join(", ")
+    }))
   };
 
   return (
@@ -225,7 +241,7 @@ const BlogPage = () => {
                       loading="lazy"
                     />
                   </div>
-                  
+
                   <div className="p-6">
                     <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
                       <span className="flex items-center space-x-1">

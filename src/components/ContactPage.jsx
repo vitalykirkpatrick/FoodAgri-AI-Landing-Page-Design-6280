@@ -37,7 +37,6 @@ const ContactPage = () => {
       // Simulate form submission
       console.log('Contact form submission:', formData);
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
       alert('Thank you for your message! We\'ll get back to you within 24 hours.');
       setFormData({
         name: '',
@@ -82,10 +81,11 @@ const ContactPage = () => {
   ];
 
   const seoData = {
-    title: "Contact FoodAgri AI - Get in Touch with Our Food Industry AI Experts",
-    description: "Contact FoodAgri AI for AI-powered sales automation and marketing solutions for food and agriculture businesses. Get expert consultation and support from our industry specialists.",
-    keywords: "contact FoodAgri AI, food industry AI support, agriculture AI consultation, sales automation help, food tech support",
-    canonical: "https://foodagriai.com/contact"
+    title: "Contact FoodAgri AI - Get Expert AI Solutions for Your Food Business",
+    description: "Contact FoodAgri AI for AI-powered sales automation and marketing solutions for food and agriculture businesses. Get expert consultation and support from our industry specialists. Call +1 (307) 555-1234 or email privacy@foodagriai.com.",
+    keywords: "contact FoodAgri AI, food industry AI support, agriculture AI consultation, sales automation help, food tech support, AI solutions contact, food business automation, agriculture technology support",
+    canonical: "https://foodagriai.com/contact",
+    image: "https://foodagriai.com/og-image-contact.jpg"
   };
 
   const structuredDataContact = {
@@ -96,11 +96,28 @@ const ContactPage = () => {
     "mainEntity": {
       "@type": "Organization",
       "name": "FoodAgri AI LLC",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-307-555-1234",
-        "contactType": "customer service",
-        "email": "privacy@foodagriai.com"
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-307-555-1234",
+          "contactType": "customer service",
+          "email": "privacy@foodagriai.com",
+          "availableLanguage": "English",
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "30 N Gould St Ste R",
+        "addressLocality": "Sheridan",
+        "addressRegion": "WY",
+        "postalCode": "82801",
+        "addressCountry": "US"
       }
     }
   };

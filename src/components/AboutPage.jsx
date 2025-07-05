@@ -77,10 +77,11 @@ const AboutPage = () => {
   ];
 
   const seoData = {
-    title: "About FoodAgri AI - AI-Powered Solutions for Food & Agriculture Industry",
-    description: "Learn about FoodAgri AI's mission to transform food and agriculture businesses with AI-powered sales automation, lead generation, and marketing solutions. Founded by industry veteran Vitaly Kirkpatrick.",
-    keywords: "about FoodAgri AI, food industry AI company, agriculture AI solutions, Vitaly Kirkpatrick, food tech company, agritech solutions",
-    canonical: "https://foodagriai.com/about"
+    title: "About FoodAgri AI - Meet the Team Behind AI-Powered Food Industry Solutions",
+    description: "Learn about FoodAgri AI's mission to transform food and agriculture businesses with AI-powered sales automation and marketing solutions. Founded by industry veteran Vitaly Kirkpatrick with 18+ years of enterprise sales experience in food manufacturing and agriculture.",
+    keywords: "about FoodAgri AI, food industry AI company, agriculture AI solutions, Vitaly Kirkpatrick, food tech company, agritech solutions, food industry expertise, agriculture technology leadership, AI food solutions team",
+    canonical: "https://foodagriai.com/about",
+    image: "https://foodagriai.com/og-image-about.jpg"
   };
 
   const structuredDataOrganization = {
@@ -88,14 +89,26 @@ const AboutPage = () => {
     description: "AI-powered sales and marketing automation platform specifically designed for food and agriculture businesses",
     founder: {
       "@type": "Person",
-      "name": "Vitaly Kirkpatrick"
+      "name": "Vitaly Kirkpatrick",
+      "jobTitle": "Founder & CEO",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "FoodAgri AI LLC"
+      }
     },
     foundingDate: "2025",
     industry: "Software",
     serviceArea: {
       "@type": "Country",
       "name": "United States"
-    }
+    },
+    knowsAbout: [
+      "Food Industry Sales",
+      "Agriculture Technology",
+      "AI Automation",
+      "Sales Process Optimization",
+      "Food Safety Compliance"
+    ]
   };
 
   return (
