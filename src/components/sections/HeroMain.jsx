@@ -24,10 +24,12 @@ const HeroMain = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-          alt="AI-powered food manufacturing and agricultural automation technology"
+        <img 
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+          alt="AI-powered food manufacturing and agricultural automation technology - FoodAgri AI platform transforming food industry operations"
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchpriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
       </div>
@@ -40,18 +42,20 @@ const HeroMain = () => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Transform Your Food Business with{' '}
-            <span className="text-emerald-400">
-              <span className="text-emerald-400">FoodAgri</span>{' '}
-              <span className="text-blue-400">AI</span>
-            </span>-Powered Growth
-          </h1>
-
-          <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
-            Stop losing sales to manual processes. <span className="text-emerald-400">FoodAgri</span>{' '}
-            <span className="text-blue-400">AI</span> automates your lead generation, fills your pipeline, and scales your revenue—specifically designed for food and agriculture businesses.
-          </p>
+          <header>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              Transform Your Food Business with{' '}
+              <span className="text-emerald-400">
+                <span className="text-emerald-400">FoodAgri</span>{' '}
+                <span className="text-blue-400">AI</span>
+              </span>-Powered Growth
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
+              Stop losing sales to manual processes. <span className="text-emerald-400">FoodAgri</span>{' '}
+              <span className="text-blue-400">AI</span> automates your lead generation, fills your pipeline, and scales your revenue—specifically designed for food and agriculture businesses.
+            </p>
+          </header>
 
           {/* Stats */}
           <motion.div
@@ -80,6 +84,7 @@ const HeroMain = () => {
             <button
               onClick={videoModal.openModal}
               className="group bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-2 border-white/30 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center space-x-3 hover:scale-105"
+              aria-label="Watch FoodAgri AI platform demonstration video"
             >
               <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center">
                 <SafeIcon icon={FiPlay} className="w-6 h-6 text-white ml-1" />
@@ -90,6 +95,7 @@ const HeroMain = () => {
             <button
               onClick={() => navigate('/customer-onboarding')}
               className="group bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2"
+              aria-label="Start growing your food business with FoodAgri AI"
             >
               <span>Let's Grow Your Business</span>
               <SafeIcon icon={FiArrowRight} className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

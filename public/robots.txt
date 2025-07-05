@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://foodagriai.com/sitemap.xml
+
+# Block admin areas
+Disallow: /admin
+Disallow: /admin/*

@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import Navigation from './Navigation';
 import HeroMain from './sections/HeroMain';
 import LogoStrip from './sections/LogoStrip';
@@ -13,22 +12,37 @@ import ProductIntro from './sections/ProductIntro';
 import AboutMe from './sections/AboutMe';
 import FAQ from './sections/FAQ';
 import Footer from './sections/Footer';
+import SEOHead from './SEO/SEOHead';
+import StructuredData from './SEO/StructuredData';
 
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead
+        title="FoodAgri AI - AI-Powered Sales & Marketing Platform for Food & Agriculture Businesses"
+        description="Transform your food and agriculture business with AI-powered sales automation, lead generation, and marketing solutions. Increase revenue by 300% with our specialized platform for food manufacturers, processors, and distributors."
+        keywords="food industry AI, agriculture AI, sales automation, lead generation, food marketing, agriculture sales, food tech, agritech, B2B sales, food manufacturing, food processing, agricultural technology, CRM automation, marketing automation, food compliance, FDA compliance, USDA compliance"
+        canonical="https://foodagriai.com/"
+      />
+      
+      <StructuredData type="organization" />
+      <StructuredData type="software" />
+      <StructuredData type="website" />
+      
       <Navigation />
-      <HeroMain />
-      <LogoStrip />
-      <Hero />
-      <PainPoints />
-      <DesiredOutcome />
-      <OurServices />
-      <WorkingTogether />
-      <WhyDifferent />
-      <ProductIntro />
-      <AboutMe />
-      <FAQ />
+      <main role="main">
+        <HeroMain />
+        <LogoStrip />
+        <Hero />
+        <PainPoints />
+        <DesiredOutcome />
+        <OurServices />
+        <WorkingTogether />
+        <WhyDifferent />
+        <ProductIntro />
+        <AboutMe />
+        <FAQ />
+      </main>
       <Footer />
     </div>
   );

@@ -16,6 +16,7 @@ import DataHandlingPage from './components/DataHandlingPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import CookiePolicyPage from './components/CookiePolicyPage';
 import DataRightsRequestPage from './components/DataRightsRequestPage';
+import AdminPage from './components/admin/AdminPage';
 import './App.css';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/cookie-policy" element={<CookiePolicyPage />} />
           <Route path="/data-rights-request" element={<DataRightsRequestPage />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </div>
     </Router>
