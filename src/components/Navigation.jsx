@@ -23,7 +23,7 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
+
     const handleClickOutside = (event) => {
       if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target)) {
         setIsServicesDropdownOpen(false);
@@ -32,7 +32,7 @@ const Navigation = () => {
 
     window.addEventListener('scroll', handleScroll);
     document.addEventListener('mousedown', handleClickOutside);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousedown', handleClickOutside);
@@ -44,8 +44,8 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { 
-      name: 'Services', 
+    {
+      name: 'Services',
       href: '#services',
       hasDropdown: true,
       dropdownItems: [
@@ -59,10 +59,10 @@ const Navigation = () => {
         { name: 'Data Intelligence Bundle', href: '/data-intelligence-bundle' }
       ]
     },
-    { name: 'Our Difference', href: '#why-different' },
-    { name: 'Process', href: '#process' },
-    { name: 'About', href: '#about' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'Our Process', href: '/our-process' },
+    { name: 'About', href: '/about' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   const scrollToSection = (href) => {
@@ -149,7 +149,7 @@ const Navigation = () => {
                             {item.name}
                             <SafeIcon icon={FiChevronDown} className="w-4 h-4 ml-1" />
                           </button>
-                          
+
                           {isServicesDropdownOpen && (
                             <motion.div
                               initial={{ opacity: 0, y: 10 }}
@@ -184,8 +184,8 @@ const Navigation = () => {
                 </div>
               </div>
 
-              {/* CTA Button */}
-              <div className="hidden md:block">
+              {/* Desktop CTA Button */}
+              <div className="hidden md:flex items-center space-x-4">
                 <button
                   onClick={demoModal.openModal}
                   className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
@@ -223,9 +223,11 @@ const Navigation = () => {
                             className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-800 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
                           >
                             {item.name}
-                            <SafeIcon 
-                              icon={FiChevronDown} 
-                              className={`w-4 h-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} 
+                            <SafeIcon
+                              icon={FiChevronDown}
+                              className={`w-4 h-4 transition-transform ${
+                                isServicesDropdownOpen ? 'rotate-180' : ''
+                              }`}
                             />
                           </button>
                           {isServicesDropdownOpen && (
@@ -252,6 +254,7 @@ const Navigation = () => {
                       )}
                     </div>
                   ))}
+
                   <div className="pt-2">
                     <button
                       onClick={demoModal.openModal}

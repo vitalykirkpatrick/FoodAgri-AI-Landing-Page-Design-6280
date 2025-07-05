@@ -11,6 +11,10 @@ import OnboardingTrainingPage from './components/OnboardingTrainingPage';
 import PartnershipChannelPage from './components/PartnershipChannelPage';
 import DataIntelligencePage from './components/DataIntelligencePage';
 import CustomerOnboardingPage from './components/CustomerOnboardingPage';
+import OurProcessPage from './components/OurProcessPage';
+import AboutPage from './components/AboutPage';
+import BlogPage from './components/BlogPage';
+import ContactPage from './components/ContactPage';
 import TermsOfUsePage from './components/TermsOfUsePage';
 import DataHandlingPage from './components/DataHandlingPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
@@ -35,6 +39,10 @@ function App() {
           <Route path="/partnership-channel-bundle" element={<PartnershipChannelPage />} />
           <Route path="/data-intelligence-bundle" element={<DataIntelligencePage />} />
           <Route path="/customer-onboarding" element={<CustomerOnboardingPage />} />
+          <Route path="/our-process" element={<OurProcessPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/terms-of-use" element={<TermsOfUsePage />} />
           <Route path="/data-handling-deletion-schedule" element={<DataHandlingPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />

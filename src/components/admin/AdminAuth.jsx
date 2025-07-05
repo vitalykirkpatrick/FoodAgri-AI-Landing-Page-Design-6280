@@ -4,10 +4,10 @@ import { supabase } from '../../lib/supabase';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
 
-const { FiLock, FiMail, FiEye, FiEyeOff } = FiIcons;
+const { FiLock, FiMail, FiEye, FiEyeOff, FiAlertTriangle } = FiIcons;
 
 const AdminAuth = ({ onAuthSuccess }) => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('vitmag@gmail.com');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -19,18 +19,37 @@ const AdminAuth = ({ onAuthSuccess }) => {
     setError('');
 
     try {
+      console.log('Attempting login with:', { email });
+      
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Supabase auth error:', error);
+        throw error;
+      }
 
       if (data.user) {
+        console.log('Login successful:', data.user);
         onAuthSuccess(data.user);
+      } else {
+        throw new Error('No user data returned');
       }
     } catch (error) {
-      setError(error.message);
+      console.error('Login error:', error);
+      
+      // Provide more helpful error messages
+      if (error.message.includes('Invalid login credentials')) {
+        setError('Invalid email or password. Make sure you have created the admin user in Supabase with email: vitmag@gmail.com and password: Chernivtsi_23');
+      } else if (error.message.includes('Email not confirmed')) {
+        setError('Email not confirmed. Please check your email or confirm the user in Supabase dashboard.');
+      } else if (error.message.includes('fetch') || error.name === 'TypeError') {
+        setError('Connection error. Supabase configuration may be incorrect. Please check your credentials.');
+      } else {
+        setError(error.message || 'Login failed. Please try again.');
+      }
     } finally {
       setIsLoading(false);
     }
@@ -69,7 +88,7 @@ const AdminAuth = ({ onAuthSuccess }) => {
               onChange={(e) => setEmail(e.target.value)}
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
-              placeholder="admin@foodagriai.com"
+              placeholder="vitmag@gmail.com"
             />
           </div>
 
@@ -85,7 +104,7 @@ const AdminAuth = ({ onAuthSuccess }) => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
-                placeholder="Enter your password"
+                placeholder="Chernivtsi_23"
               />
               <button
                 type="button"
@@ -110,6 +129,18 @@ const AdminAuth = ({ onAuthSuccess }) => {
           <p className="text-xs text-gray-500">
             Secure admin access for FoodAgri AI content management
           </p>
+        </div>
+
+        <div className="mt-6 bg-blue-50 rounded-xl p-4">
+          <p className="text-sm font-semibold text-gray-700 mb-2">Setup Instructions:</p>
+          <ol className="text-xs text-gray-600 space-y-1">
+            <li>1. Go to your Supabase dashboard</li>
+            <li>2. Go to Authentication → Users</li>
+            <li>3. Click "Add User" and create:</li>
+            <li>   • Email: vitmag@gmail.com</li>
+            <li>   • Password: Chernivtsi_23</li>
+            <li>4. Make sure to confirm the user</li>
+          </ol>
         </div>
       </motion.div>
     </div>

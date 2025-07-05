@@ -7,9 +7,6 @@ import PainPoints from './sections/PainPoints';
 import DesiredOutcome from './sections/DesiredOutcome';
 import OurServices from './sections/OurServices';
 import WorkingTogether from './sections/WorkingTogether';
-import WhyDifferent from './sections/WhyDifferent';
-import ProductIntro from './sections/ProductIntro';
-import AboutMe from './sections/AboutMe';
 import FAQ from './sections/FAQ';
 import Footer from './sections/Footer';
 import SEOHead from './SEO/SEOHead';
@@ -24,12 +21,12 @@ const LandingPage = () => {
         keywords="food industry AI, agriculture AI, sales automation, lead generation, food marketing, agriculture sales, food tech, agritech, B2B sales, food manufacturing, food processing, agricultural technology, CRM automation, marketing automation, food compliance, FDA compliance, USDA compliance"
         canonical="https://foodagriai.com/"
       />
-      
       <StructuredData type="organization" />
       <StructuredData type="software" />
       <StructuredData type="website" />
       
       <Navigation />
+      
       <main role="main">
         <HeroMain />
         <LogoStrip />
@@ -38,11 +35,9 @@ const LandingPage = () => {
         <DesiredOutcome />
         <OurServices />
         <WorkingTogether />
-        <WhyDifferent />
-        <ProductIntro />
-        <AboutMe />
         <FAQ />
       </main>
+      
       <Footer />
     </div>
   );
